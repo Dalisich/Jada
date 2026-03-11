@@ -17,20 +17,20 @@ const services = [
     title: "Leitungsdämmungen",
     description:
       "Tägliche Isolierungsarbeiten mit PIR, Glasfaserwolle oder Mineralwolleschalen. Die Wahl der Isolierungsart hängt ab von Medium, Temperaturbereich, Vorschriften und Kundenwunsch.",
-    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1000&q=80",
     href: "/daemmungen/leitungen",
   },
   {
     title: "Lüftungsdämmungen",
     description:
       "Ausführung mit Mineralwollprodukten – absolut nicht brennbar und beständig gegen sehr hohe Temperaturen. Hocheffiziente, optimal ausgerüstete Ausführung.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1513360492081-3067eb215160?w=1000&q=80",
     href: "/daemmungen/lueftung",
   },
   {
     title: "Sanitärisolierungen",
     description: "Kalt- und Warmwasserleitungen sowie Abwasserschutz. Wir decken das gesamte Spektrum der Gebäudetechnik ab.",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1000&q=80",
     href: "/daemmungen",
   }
 ];
