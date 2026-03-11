@@ -17,55 +17,91 @@ export default function ServiceHero({
   breadcrumb,
 }: ServiceHeroProps) {
   return (
-    <section className="relative h-[70vh] min-h-[500px] flex items-end overflow-hidden bg-primary pt-32">
-      {/* Premium Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay scale-110"
+    <section className="relative h-[75vh] min-h-[600px] flex items-end overflow-hidden bg-primary pt-32 lg:pt-40">
+      {/* 1. Base Layer: The Image with subtle Parallax-like scale */}
+      <motion.div
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-luminosity"
         style={{ backgroundImage: `url(${image})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-primary/40" />
 
-      {/* Decorative Glows to match Homepage */}
-      <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-secondary/10 blur-[100px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
+      {/* 2. Pattern Layer: The signature JADA Grid */}
+      <div 
+        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}
+      />
 
-      <div className="relative z-10 max-w-[1280px] mx-auto px-6 pb-20 w-full">
-        {/* Breadcrumb - Clean Premium Style */}
+      {/* 3. Gradient Layer: Deep Multi-layered shadows */}
+      <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-transparent to-transparent" />
+
+      {/* 4. Decorative Layer: Floating Orbs & Geometric accents */}
+      <motion.div 
+        animate={{ 
+          y: [0, -20, 0],
+          opacity: [0.1, 0.2, 0.1]
+        }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/4 right-[5%] w-64 h-64 bg-secondary rounded-full blur-[100px] pointer-events-none"
+      />
+      <motion.div 
+        animate={{ 
+          y: [0, 30, 0],
+          opacity: [0.05, 0.15, 0.05]
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-accent rounded-full blur-[130px] pointer-events-none"
+      />
+
+      <div className="relative z-10 max-w-[1280px] mx-auto px-6 pb-24 w-full">
+        {/* Breadcrumb - Clean Premium Glassmorphism */}
         <ScrollReveal delay={0.1}>
-          <nav className="flex items-center gap-3 text-sm text-surface-white/40 mb-8 font-medium">
-            {breadcrumb.map((item, i) => (
-              <span key={`bc-${i}`} className="flex items-center gap-3">
-                {i > 0 && <span className="opacity-30">/</span>}
-                <a
-                  href={item.href}
-                  className="hover:text-accent transition-colors tracking-widest uppercase text-xs"
-                >
-                  {item.label}
-                </a>
-              </span>
-            ))}
-          </nav>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 mb-10 shadow-lg">
+            <nav className="flex items-center gap-3 text-sm text-surface-white/60 font-medium whitespace-nowrap overflow-x-auto scroller-hide max-w-[85vw]">
+              {breadcrumb.map((item, i) => (
+                <span key={`bc-${i}`} className="flex items-center gap-2">
+                  {i > 0 && <span className="opacity-20 text-[10px]">/</span>}
+                  <a
+                    href={item.href}
+                    className={`transition-all tracking-widest uppercase text-[10px] ${i === breadcrumb.length - 1 ? 'text-accent font-bold' : 'hover:text-white'}`}
+                  >
+                    {item.label}
+                  </a>
+                </span>
+              ))}
+            </nav>
+          </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.2} className="max-w-4xl">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-white text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-[1.1]"
-          >
-            {title}
-          </motion.h1>
-        </ScrollReveal>
+        <div className="max-w-5xl">
+          <ScrollReveal delay={0.2}>
+            <h1 className="text-white text-6xl md:text-8xl font-bold mb-8 tracking-tighter leading-[0.95] drop-shadow-2xl">
+              {title.split(' ').map((word, i) => (
+                <span key={i} className="inline-block mr-[0.2em]">
+                  {word}
+                </span>
+              ))}
+            </h1>
+          </ScrollReveal>
 
-        <ScrollReveal delay={0.4} className="max-w-2xl">
-          <p className="text-white/70 text-lg md:text-xl leading-relaxed font-light">
-            {description}
-          </p>
-        </ScrollReveal>
+          <ScrollReveal delay={0.4} className="max-w-3xl">
+            <div className="flex gap-6 items-start">
+              <div className="w-12 h-[1px] bg-accent mt-4 shrink-0 hidden md:block" />
+              <p className="text-white/80 text-xl md:text-2xl leading-relaxed font-light">
+                {description}
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
       </div>
 
-      {/* Modern bottom divider */}
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.05)]" />
+      {/* Modern bottom flow-line */}
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
     </section>
   );
 }
