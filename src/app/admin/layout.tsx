@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { LayoutDashboard, FileText, Settings, LogOut, ArrowLeft } from "lucide-react";
-import { auth } from "@/lib/auth";
+import { auth, signOut } from "@/lib/auth";
 
 export default async function AdminLayout({
   children,
@@ -79,8 +79,10 @@ export default async function AdminLayout({
             Zur Webseite
           </Link>
           <form
-            action="/api/auth/signout"
-            method="POST"
+            action={async () => {
+              "use server";
+              await signOut({ redirectTo: "/login" });
+            }}
             className="w-full"
           >
             <button
