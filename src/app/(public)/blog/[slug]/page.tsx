@@ -141,9 +141,9 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="max-w-[1200px] mx-auto px-6 relative z-10">
             <h2 className="text-3xl font-bold text-primary mb-12 tracking-tight">Verwandte Fachartikel</h2>
             <div className="grid md:grid-cols-2 gap-10">
-              {related.map((relPost: any) => (
+              {related.map((relPost: any, i: number) => (
                 <Link
-                  key={relPost.id}
+                  key={`rel-${i}`}
                   href={`/blog/${relPost.slug}`}
                   className="group flex flex-col md:flex-row bg-surface-white rounded-[2rem] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(45,90,158,0.08)] hover-lift transition-all border border-gray-100 h-full"
                 >

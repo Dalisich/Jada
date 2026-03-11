@@ -45,7 +45,7 @@ export default function CTASection() {
                   loop
                   className="w-full h-full object-contain relative z-10"
                 >
-                  <source src="/Logorennend.mp4?v=3" type="video/mp4" />
+                  <source src="/Logorennend.mp4" type="video/mp4" />
                 </video>
               </div>
             </ScrollReveal>

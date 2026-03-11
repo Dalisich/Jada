@@ -40,8 +40,8 @@ export default async function BlogPage() {
             </div>
           ) : (
             <ScrollReveal staggerChildren={0.1} className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {posts.map((post: any) => (
-                <ScrollRevealItem key={post.id} className="h-full">
+              {posts.map((post: any, i: number) => (
+                <ScrollRevealItem key={`post-${i}`} className="h-full">
                   <Link
                     href={`/blog/${post.slug}`}
                     className="group flex flex-col h-full bg-surface-white rounded-[2.5rem] overflow-hidden hover-lift shadow-[0_15px_40px_-20px_rgba(0,0,0,0.1)] border border-gray-100"

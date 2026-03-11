@@ -57,8 +57,8 @@ export default function ServicesSection() {
         </ScrollReveal>
 
         <ScrollReveal staggerChildren={0.2} className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          {services.map((service) => (
-            <ScrollRevealItem key={service.title}>
+          {services.map((service, i) => (
+            <ScrollRevealItem key={`service-${i}`}>
               <Link
                 href={service.href}
                 className="group block h-full bg-surface-white rounded-3xl overflow-hidden hover-lift border border-gray-100 shadow-[0_10px_40px_-20px_rgba(45,90,158,0.15)] flex flex-col"
@@ -93,9 +93,9 @@ export default function ServicesSection() {
                   </p>
 
                   <ul className="space-y-4 mb-10 flex-grow">
-                    {service.items.map((item) => (
+                    {service.items.map((item, j) => (
                       <li
-                        key={item}
+                        key={`item-${j}`}
                         className="flex items-center gap-4 text-text-primary font-medium"
                       >
                         <span className="w-2 h-2 rounded-full bg-secondary outline outline-offset-4 outline-secondary/20 shadow-[0_0_10px_rgba(76,199,242,0.5)] shrink-0" />

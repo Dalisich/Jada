@@ -37,9 +37,9 @@ export default function ReferenzenClient({
         {/* Filter Section - Premium Minimalist */}
         <ScrollReveal className="flex flex-wrap items-center gap-4 mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-text-secondary mr-4">Filtern nach:</span>
-          {categories.map((cat) => (
+          {categories.map((cat, i) => (
             <button
-              key={cat}
+              key={`cat-${i}`}
               onClick={() => setActiveFilter(cat)}
               className={`px-8 py-3 rounded-2xl text-sm font-bold transition-all duration-300 ${
                 activeFilter === cat

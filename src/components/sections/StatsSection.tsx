@@ -38,8 +38,8 @@ export default function StatsSection() {
           {/* subtle connecting line behind stats */}
           <div className="hidden lg:block absolute top-1/2 left-10 right-10 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-y-1/2" />
 
-          {stats.map((stat) => (
-            <ScrollRevealItem key={stat.label} className="text-center relative">
+          {stats.map((stat, i) => (
+            <ScrollRevealItem key={`stat-${i}`} className="text-center relative">
               <div className="px-6 py-12 rounded-3xl glass-panel-dark hover:-translate-y-2 transition-transform duration-500 ease-out border border-white/5 relative overflow-hidden group">
                 
                 {/* Hover glow effect behind content inside card */}

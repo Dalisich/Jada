@@ -97,7 +97,7 @@ export default function Navigation() {
             {/* Logo */}
             <Link href="/" className="relative z-10 flex items-center py-2">
               <img 
-                src="/Logo/Logo_Schriftzug.png?v=5" 
+                src="/Logo/Logo_Schriftzug.png" 
                 alt="JADA Logo" 
                 className={`object-contain transition-all duration-500 hover:scale-105 ${scrolled ? 'h-16' : 'h-24'} w-auto`}
               />
@@ -105,9 +105,9 @@ export default function Navigation() {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-2">
-              {mainLinks.map((link) => (
+              {mainLinks.map((link, i) => (
                 <div
-                  key={link.href}
+                  key={`nav-link-${i}`}
                   className="relative"
                   onMouseEnter={() =>
                     link.hasDropdown && setActiveDropdown(link.label)
@@ -157,9 +157,9 @@ export default function Navigation() {
                             </Link>
                           </div>
                           <div className="space-y-1">
-                            {link.children?.map((child) => (
+                            {link.children?.map((child, j) => (
                               <Link
-                                key={child.href}
+                                key={`child-${j}`}
                                 href={child.href}
                                 className="flex flex-col gap-1 p-4 rounded-2xl hover:bg-gray-50 transition-all group"
                               >
@@ -238,9 +238,9 @@ export default function Navigation() {
                   </Link>
                   {link.hasDropdown && (
                     <div className="grid grid-cols-1 gap-4 pl-6 border-l-4 border-accent/20">
-                      {link.children?.map((child) => (
+                      {link.children?.map((child, j) => (
                         <Link
-                          key={child.href}
+                          key={`child-${j}`}
                           href={child.href}
                           className="text-lg font-bold text-gray-400 hover:text-accent transition-colors py-1"
                           onClick={() => setMobileOpen(false)}

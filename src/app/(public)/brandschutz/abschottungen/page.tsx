@@ -32,8 +32,8 @@ export default function AbschottungenPage() {
       <section className="section-padding bg-surface-white">
         <div className="max-w-[1280px] mx-auto px-6">
           <ScrollReveal className="max-w-3xl mb-16">
-            <h2 className="text-primary mb-6">Zuverlässiger Feuerwiderstand</h2>
-            <div className="space-y-4 text-text-secondary leading-relaxed">
+            <h2 key="h2" className="text-primary mb-6">Zuverlässiger Feuerwiderstand</h2>
+            <div key="div" className="space-y-4 text-text-secondary leading-relaxed">
               <p>
                 Brandabschottungen sind essenziell für den baulichen Brandschutz.
                 Sie verhindern die Ausbreitung von Feuer und Rauch durch

@@ -34,7 +34,7 @@ export default function ServiceHero({
         <ScrollReveal delay={0.1}>
           <nav className="flex items-center gap-3 text-sm text-surface-white/40 mb-8 font-medium">
             {breadcrumb.map((item, i) => (
-              <span key={item.href} className="flex items-center gap-3">
+              <span key={`bc-${i}`} className="flex items-center gap-3">
                 {i > 0 && <span className="opacity-30">/</span>}
                 <a
                   href={item.href}

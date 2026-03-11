@@ -47,8 +47,8 @@ export default function WhyJadaSection() {
           staggerChildren={0.15}
           className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10"
         >
-          {reasons.map((reason) => (
-            <ScrollRevealItem key={reason.title}>
+          {reasons.map((reason, i) => (
+            <ScrollRevealItem key={`reason-${i}`}>
               <div className="group p-10 rounded-3xl bg-surface-white border border-gray-100/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(45,90,158,0.08)] transition-all duration-500 hover:-translate-y-2 h-full flex flex-col relative overflow-hidden">
                 
                 {/* Decorative top line */}

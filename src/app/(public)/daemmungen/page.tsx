@@ -64,7 +64,7 @@ export default function DaemmungenPage() {
 
           <div className="grid gap-16 lg:gap-24">
             {services.map((service, i) => (
-              <ScrollReveal key={service.title} delay={i * 0.1}>
+              <ScrollReveal key={`service-${i}`} delay={i * 0.1}>
                 <Link
                   href={service.href}
                   className={`group grid lg:grid-cols-2 gap-12 items-center`}

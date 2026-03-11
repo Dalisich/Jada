@@ -138,7 +138,7 @@ export default function UeberUnsPage() {
 
             <div className="space-y-32">
               {timeline.map((item, i) => (
-                <div key={item.year} className="relative">
+                <div key={`item-${i}`} className="relative">
                   {/* Large Parallax Year Background */}
                   <div 
                     className={`absolute hidden lg:flex items-center justify-center inset-0 pointer-events-none z-0 transition-transform duration-1000 ease-out`}
@@ -214,8 +214,8 @@ export default function UeberUnsPage() {
           </ScrollReveal>
 
           <ScrollReveal staggerChildren={0.1} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {values.map((value) => (
-              <ScrollRevealItem key={value.title}>
+            {values.map((value, i) => (
+              <ScrollRevealItem key={`value-${i}`}>
                 <div className="group h-full p-10 rounded-[2.5rem] bg-surface-white border border-gray-100 hover:shadow-[0_20px_50px_rgba(45,90,158,0.1)] transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center">
                   <div className="w-16 h-16 rounded-2xl bg-primary/[0.03] group-hover:bg-primary text-primary group-hover:text-surface-white flex items-center justify-center mb-8 transition-all duration-500 ease-out">
                     <value.icon className="w-8 h-8" strokeWidth={1.5} />
@@ -239,8 +239,8 @@ export default function UeberUnsPage() {
           </ScrollReveal>
 
           <ScrollReveal staggerChildren={0.2} className="flex flex-wrap justify-center gap-16 lg:gap-24">
-            {team.map((member) => (
-              <ScrollRevealItem key={member.name} className="flex flex-col items-center group">
+            {team.map((member, i) => (
+              <ScrollRevealItem key={`member-${i}`} className="flex flex-col items-center group">
                 <div className="relative w-72 h-96 md:w-80 md:h-[450px] rounded-[3rem] overflow-hidden mb-8 shadow-2xl transition-transform duration-700 group-hover:scale-[1.03]">
                   <Image
                     src={member.image}
