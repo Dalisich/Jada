@@ -9,16 +9,20 @@ export async function GET(
 ) {
   const { filename } = await params;
   
-  // We only serve from /data/uploads in production.
-  // Locally, standard /uploads/ handles it.
-  const uploadDir = process.env.NODE_ENV === "production" 
-    ? "/data/uploads" 
-    : join(process.cwd(), "public", "uploads");
+  // We primarily check /data/uploads in production.
+  // Then we check the fallback public/uploads.
+  const isProd = process.env.NODE_ENV === "production";
+  const primaryDir = isProd ? "/data/uploads" : join(process.cwd(), "public", "uploads");
+  const fallbackDir = join(process.cwd(), "public", "uploads");
 
-  const filePath = join(uploadDir, filename);
+  let filePath = join(primaryDir, filename);
 
   if (!existsSync(filePath)) {
-    return new NextResponse("Not Found", { status: 404 });
+     // Check fallback directory
+     filePath = join(fallbackDir, filename);
+     if (!existsSync(filePath)) {
+       return new NextResponse("Not Found", { status: 404 });
+     }
   }
 
   try {
