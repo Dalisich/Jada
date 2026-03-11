@@ -18,18 +18,17 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
 
-        log(`🔍 Auth attempt for: ${credentials.email}`);
+        const email = (credentials.email as string).toLowerCase().trim();
+        log(`🔍 Auth attempt: ${email}`);
 
         const user = await prisma.user.findUnique({
-          where: { email: credentials.email as string },
+          where: { email },
         });
 
         if (!user) {
-          log(`❌ User not found: ${credentials.email}`);
+          log(`❌ User not found: ${email}`);
           return null;
         }
-
-        log(`👤 User found: ${user.email}`);
 
         const passwordMatch = await bcrypt.compare(
           credentials.password as string,
@@ -37,11 +36,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         );
 
         if (!passwordMatch) {
-          log(`❌ Password mismatch for: ${credentials.email}`);
+          log(`❌ Password mismatch: ${email}`);
           return null;
         }
 
-        log(`✅ Auth successful: ${credentials.email}`);
+        log(`✅ Auth successful: ${email}`);
         return {
           id: user.id,
           email: user.email,
