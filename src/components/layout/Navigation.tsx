@@ -84,16 +84,16 @@ export default function Navigation() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 flex justify-center">
+      <div className="fixed top-0 left-0 right-0 z-50 flex justify-center p-3 sm:p-5">
         <motion.header
-          className={`w-full max-w-[1580px] bg-white border-b border-gray-100 transition-all duration-300 rounded-b-[3.5rem] lg:rounded-b-[5rem] px-8 md:px-16 ${
-            scrolled ? "shadow-xl shadow-black/10" : "shadow-lg shadow-black/5"
+          className={`w-full max-w-[1580px] bg-white/95 backdrop-blur-md border border-gray-100 transition-all duration-300 rounded-[3.5rem] lg:rounded-[5rem] px-8 md:px-16 ${
+            scrolled ? "shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)]" : "shadow-[0_15px_30px_-10px_rgba(0,0,0,0.1)]"
           }`}
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <nav className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-24' : 'h-32'}`}>
+          <nav className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-24' : 'h-28'}`}>
             {/* Logo */}
             <Link href="/" className="relative z-10 flex items-center py-2">
               <img 

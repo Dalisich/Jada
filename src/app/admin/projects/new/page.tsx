@@ -9,6 +9,7 @@ import * as z from "zod";
 import { useEffect } from "react";
 import { ArrowLeft, Save, Plus, Check, X, Loader2 } from "lucide-react";
 import ImageUpload from "@/components/admin/ImageUpload";
+import RichTextEditor from "@/components/admin/RichTextEditor";
 
 const projectSchema = z.object({
   title: z.string().min(3, "Titel muss mindestens 3 Zeichen lang sein"),
@@ -191,13 +192,16 @@ export default function NewProjectPage() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Kurzbeschreibung
+              Ausführliche Beschreibung
             </label>
-            <textarea
-              {...register("desc")}
-              rows={3}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent resize-none"
-              placeholder="Kurze Projektbeschreibung..."
+            <Controller
+              name="desc"
+              control={control}
+              render={({ field }) => (
+                <div className="prose-wrapper">
+                  <RichTextEditor content={field.value} onChange={field.onChange} />
+                </div>
+              )}
             />
             {errors.desc && <p className="text-red-500 text-xs mt-1">{errors.desc.message}</p>}
           </div>

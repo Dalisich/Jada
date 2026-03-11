@@ -83,9 +83,10 @@ export default function ReferenzenClient({
                     <h3 className="text-white text-2xl font-bold tracking-tight mb-3">
                       {project.title}
                     </h3>
-                    <p className="text-white/60 text-sm font-light line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                      {project.desc}
-                    </p>
+                    <div 
+                      className="text-white/60 text-sm font-light line-clamp-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 prose prose-invert prose-sm"
+                      dangerouslySetInnerHTML={{ __html: project.desc }} 
+                    />
                     
                     <div className="mt-6 flex items-center justify-center w-10 h-10 rounded-full bg-surface-white text-primary opacity-0 group-hover:opacity-100 transition-all duration-500 delay-150 transform translate-y-4 group-hover:translate-y-0">
                        <ArrowUpRight className="w-5 h-5" />
