@@ -53,8 +53,8 @@ const values = [
 ];
 
 const team = [
-  { name: "Stefano Jud", role: "Geschäftsführer", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" },
-  { name: "Michael Inderbitzin", role: "Geschäftsführer", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" },
+  { name: "Stefano Jud", role: "Geschäftsführer", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" },
+  { name: "Michael Inderbitzin", role: "Geschäftsführer", image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80" },
 ];
 
 export default function UeberUnsPage() {

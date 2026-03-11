@@ -11,7 +11,7 @@ const services = [
     description:
       "Hocheffiziente Isolierungslösungen für Leitungen und Lüftungsanlagen. Wir arbeiten mit PIR, Glasfaserwolle und Mineralwolleschalen.",
     image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80",
+      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80",
     href: "/daemmungen",
     items: [
       "Leitungsdämmungen",
