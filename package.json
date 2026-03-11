@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node scripts/setup-sqlite.mjs && prisma db push --accept-data-loss && next start",
+    "start": "node scripts/setup-sqlite.mjs && prisma db push --accept-data-loss && prisma db seed && next start",
     "lint": "eslint",
     "postinstall": "node scripts/setup-sqlite.mjs && prisma generate"
   },
