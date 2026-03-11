@@ -25,8 +25,7 @@ const services = [
     title: "Brandschutz",
     description:
       "Umfassender Brandschutz für maximale Sicherheit. Von Abschottungen über Verkleidungen bis zu Entrauchungsanlagen.",
-    image:
-      "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
+    image: "/brandschutz_hero_technical.png",
     href: "/brandschutz",
     items: [
       "Brandabschottungen",

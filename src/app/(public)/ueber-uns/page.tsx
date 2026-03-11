@@ -63,7 +63,7 @@ export default function UeberUnsPage() {
       <ServiceHero
         title="Über uns"
         description="Seit 1998 Ihr vertrauenswürdiger Partner für Isolierungen und Brandschutz in der Schweiz."
-        image="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&q=80"
+        image="/ueber_uns_hero_architecture.png"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Über uns", href: "/ueber-uns" },

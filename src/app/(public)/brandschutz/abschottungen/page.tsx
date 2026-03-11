@@ -22,7 +22,7 @@ export default function AbschottungenPage() {
       <ServiceHero
         title="Brandabschottungen"
         description="Mörtel- und Weichabschottungen für zuverlässigen Feuerwiderstand in Wänden und Decken."
-        image="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1920&q=80"
+        image="/brandschutz_hero_technical.png"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Brandschutz", href: "/brandschutz" },

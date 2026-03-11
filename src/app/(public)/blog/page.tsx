@@ -25,7 +25,7 @@ export default async function BlogPage() {
       <ServiceHero
         title="JADA Blog"
         description="Aktuelle Erkenntnisse, Projektberichte und Fachwissen rund um Isolierungen und Brandschutz in der Schweiz."
-        image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80"
+        image="/blog_hero_technical_detail.png"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Blog", href: "/blog" },

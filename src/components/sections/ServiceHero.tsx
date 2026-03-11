@@ -27,18 +27,35 @@ export default function ServiceHero({
         style={{ backgroundImage: `url(${image})` }}
       />
 
-      {/* 2. Pattern Layer: The signature JADA Grid */}
+      {/* 2. Pattern Layer: Enhanced Technical Blueprint Grid */}
       <div 
-        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        className="absolute inset-0 opacity-[0.08] pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
+          backgroundImage: `
+            linear-gradient(to right, #4facfe 1px, transparent 1px), 
+            linear-gradient(to bottom, #4facfe 1px, transparent 1px),
+            radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)
+          `,
+          backgroundSize: '40px 40px, 40px 40px, 20px 20px'
         }}
       />
 
-      {/* 3. Gradient Layer: Deep Multi-layered shadows */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-transparent to-transparent" />
+      {/* 2b. Blueprint Lines (Simulated SVG) */}
+      <svg className="absolute inset-0 w-full h-full opacity-[0.05] pointer-events-none transition-opacity duration-1000">
+        <defs>
+          <pattern id="blueprint-grid" width="100" height="100" patternUnits="userSpaceOnUse">
+            <path d="M 100 0 L 0 0 0 100" fill="none" stroke="white" strokeWidth="0.5"/>
+            <circle cx="0" cy="0" r="1.5" fill="white" />
+            <circle cx="100" cy="0" r="1.5" fill="white" />
+            <circle cx="0" cy="100" r="1.5" fill="white" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#blueprint-grid)" />
+      </svg>
+
+      {/* 3. Gradient Layer: Deep Multi-layered shadows for contrast */}
+      <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/85 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-transparent to-transparent" />
 
       {/* 4. Decorative Layer: Floating Orbs & Geometric accents */}
       <motion.div 

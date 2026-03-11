@@ -22,6 +22,25 @@ export default function HeroSection() {
         </video>
         {/* Adjusted dark overlay for better visibility of the new video */}
         <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/30 to-primary/80" />
+        
+        {/* Technical Blueprint Overlay */}
+        <div 
+          className="absolute inset-0 opacity-[0.05] pointer-events-none"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), 
+              linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '80px 80px'
+          }}
+        />
+        <div 
+          className="absolute inset-0 opacity-[0.02] pointer-events-none"
+          style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+            backgroundSize: '20px 20px'
+          }}
+        />
       </div>
 
       {/* Glowing Orbs */}
