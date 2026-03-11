@@ -16,31 +16,31 @@ const services = [
   {
     title: "Brandabschottungen",
     description: "Mörtel- und Weichabschottungen für zuverlässigen Feuerwiderstand in Wänden und Decken. Wir sichern Ihre Durchführungen professionell ab.",
-    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
+    image: "/brandschutz_hero_technical.png",
     href: "/brandschutz/abschottungen",
   },
   {
     title: "Brandschutzverkleidungen",
     description: "Verkleidungen von Stahlkonstruktionen und Bauteilen zur Erhöhung der Feuerwiderstandsklasse nach SIA-Normen.",
-    image: "https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1000&q=80",
     href: "/brandschutz/verkleidungen",
   },
   {
     title: "Entrauchungen",
     description: "Selbsttragende Kanäle aus Feuerschutzplatten für Hochrisiko-Objekte wie Flughäfen, Spitäler und Hotels.",
-    image: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1513360492081-3067eb215160?w=1000&q=80",
     href: "/brandschutz/entrauchungen",
   },
   {
     title: "AM FireShield®",
     description: "Werksgefertigte, begehbare Leichtbeton-Elemente. JADA ist Ihr lizenzierter Partner für dieses innovative System.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1000&q=80",
     href: "/brandschutz/fireshield",
   },
   {
     title: "Installationsschacht",
     description: "EI90 feuerbeständige und wasserdichte Komplettlösung für vertikale Zonen in der Gebäudetechnik.",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=80",
     href: "/brandschutz/installationsschacht",
   },
 ];
@@ -51,7 +51,7 @@ export default function BrandschutzPage() {
       <ServiceHero
         title="Brandschutz"
         description="Umfassender Brandschutz für maximale Sicherheit – von Abschottungen bis zu hocheffizienten Entrauchungsanlagen."
-        image="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1920&q=80"
+        image="/brandschutz_hero_technical.png"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Brandschutz", href: "/brandschutz" },

@@ -39,7 +39,7 @@ export default function LueftungPage() {
       <ServiceHero
         title="Lüftungsdämmungen"
         description="Hocheffiziente Dämmungen mit Mineralwollprodukten – nicht brennbar und temperaturbeständig."
-        image="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80"
+        image="https://images.unsplash.com/photo-1513360492081-3067eb215160?w=1920&q=80"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Dämmungen", href: "/daemmungen" },
