@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Plus, Edit, Trash2, LayoutDashboard, Image as ImageIcon } from "lucide-react";

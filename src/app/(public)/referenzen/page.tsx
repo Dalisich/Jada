@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { Metadata } from "next";
 import ServiceHero from "@/components/sections/ServiceHero";
 import CTASection from "@/components/sections/CTASection";
