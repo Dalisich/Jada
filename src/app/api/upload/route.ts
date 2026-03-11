@@ -21,8 +21,11 @@ export async function POST(request: NextRequest) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    // Path to public/uploads
-    const uploadDir = join(process.cwd(), "public", "uploads");
+    // Path to persistent storage depending on environment
+    const isProd = process.env.NODE_ENV === "production";
+    const uploadDir = isProd 
+      ? "/data/uploads" 
+      : join(process.cwd(), "public", "uploads");
     
     // Create directory if it doesn't exist
     if (!existsSync(uploadDir)) {
@@ -36,8 +39,10 @@ export async function POST(request: NextRequest) {
 
     await writeFile(path, buffer);
     
-    // Return the relative URL for browser access
-    const url = `/uploads/${filename}`;
+    // Return the URL for browser access. 
+    // In production we need a dynamic route because it's outside the web root.
+    // Locally we can also use this dynamic route for consistency, or standard public serving.
+    const url = isProd ? `/api/images/${filename}` : `/uploads/${filename}`;
 
     return NextResponse.json({
       url,

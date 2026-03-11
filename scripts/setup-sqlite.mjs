@@ -60,6 +60,23 @@ async function main() {
     } else {
       console.log(`✅ Directory ${absoluteDbDirectory} already exists.`);
     }
+
+    // Also ensure the uploads directory exists
+    const uploadsDir = process.env.NODE_ENV === 'production' 
+      ? path.resolve('/data/uploads') 
+      : path.resolve(process.cwd(), 'public/uploads');
+
+    if (!fs.existsSync(uploadsDir)) {
+      console.log(`📁 Upload directory ${uploadsDir} does not exist. Creating it...`);
+      try {
+        fs.mkdirSync(uploadsDir, { recursive: true });
+        console.log(`✅ Upload directory created successfully.`);
+      } catch (err) {
+        console.error(`❌ Failed to create upload directory ${uploadsDir}:`, err.message);
+      }
+    } else {
+      console.log(`✅ Upload directory ${uploadsDir} already exists.`);
+    }
   }
 
   // 3. Write or append to .env file to ensure Prisma CLI and Next.js use this URL
