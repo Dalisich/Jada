@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LayoutDashboard, FileText, Settings, LogOut, ArrowLeft } from "lucide-react";
+import { LayoutDashboard, FileText, Settings, LogOut, ArrowLeft, DatabaseBackup } from "lucide-react";
 import { auth, signOut } from "@/lib/auth";
 
 export default async function AdminLayout({
@@ -67,6 +67,13 @@ export default async function AdminLayout({
           >
             <Settings className="w-4 h-4" />
             Kategorien
+          </Link>
+          <Link
+            href="/admin/backup"
+            className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-white/70 hover:bg-white/5 hover:text-white transition-colors"
+          >
+            <DatabaseBackup className="w-4 h-4" />
+            Backup & Restore
           </Link>
         </nav>
 
