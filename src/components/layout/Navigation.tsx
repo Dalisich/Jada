@@ -85,22 +85,22 @@ export default function Navigation() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 flex justify-center p-3 sm:p-5">
+      <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-2 py-2 sm:px-4 sm:py-3 lg:px-5 lg:py-4">
         <motion.header
-          className={`w-full max-w-[1580px] bg-white/95 backdrop-blur-md border border-gray-100 transition-all duration-300 rounded-[3.5rem] lg:rounded-[5rem] px-8 md:px-16 ${
+          className={`w-full max-w-[1580px] bg-white/95 backdrop-blur-md border border-gray-100 transition-all duration-300 rounded-2xl sm:rounded-[3rem] lg:rounded-[5rem] px-4 sm:px-6 md:px-10 lg:px-14 ${
             scrolled ? "shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)]" : "shadow-[0_15px_30px_-10px_rgba(0,0,0,0.1)]"
           }`}
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <nav className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-24' : 'h-28'}`}>
+          <nav className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-16 sm:h-20 lg:h-24' : 'h-16 sm:h-20 lg:h-28'}`}>
             {/* Logo */}
-            <Link href="/" className="relative z-10 flex items-center py-2">
-              <img 
-                src="/Logo/Logo_Schriftzug.png" 
-                alt="JADA Logo" 
-                className={`object-contain transition-all duration-500 hover:scale-105 ${scrolled ? 'h-16' : 'h-24'} w-auto`}
+            <Link href="/" className="relative z-10 flex items-center py-1 shrink-0">
+              <img
+                src="/Logo/Logo_Schriftzug.png"
+                alt="JADA Logo"
+                className={`object-contain transition-all duration-500 hover:scale-105 ${scrolled ? 'h-10 sm:h-12 lg:h-16' : 'h-10 sm:h-14 lg:h-20'} w-auto max-w-[160px] sm:max-w-[200px] lg:max-w-none`}
               />
             </Link>
 
@@ -194,7 +194,7 @@ export default function Navigation() {
             {/* Mobile Toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden relative z-10 p-4 text-primary bg-gray-50 rounded-2xl border border-gray-100"
+              className="lg:hidden relative z-10 p-2.5 sm:p-3 text-primary bg-gray-50 rounded-xl sm:rounded-2xl border border-gray-100 shrink-0"
               aria-label="Menü öffnen"
             >
               {mobileOpen ? (
@@ -211,37 +211,39 @@ export default function Navigation() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.05 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-white flex flex-col pt-40 px-8 pb-12 overflow-y-auto"
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-40 bg-white flex flex-col overflow-y-auto overflow-x-hidden"
+            style={{ paddingTop: "calc(4rem + 1.5rem + 1rem)" }}
           >
-            <nav className="max-w-md mx-auto w-full flex flex-col gap-10">
+            <nav className="max-w-md mx-auto w-full flex flex-col px-6 pt-6 pb-12 gap-0">
               {mainLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
-                  initial={{ opacity: 0, x: -30 }}
+                  initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -30 }}
-                  transition={{ delay: i * 0.05 }}
-                  className="space-y-4"
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ delay: i * 0.04 }}
+                  className="border-b border-gray-100 last:border-0"
                 >
                   <Link
                     href={link.href}
                     style={{ color: pathname.startsWith(link.href) ? '#E85E04' : TEXT_COLOR }}
-                    className="text-4xl font-black transition-colors"
+                    className="flex items-center justify-between py-4 text-2xl sm:text-3xl font-black transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
                     {link.label}
+                    {link.hasDropdown && <ChevronDown className="w-5 h-5 text-gray-300" />}
                   </Link>
                   {link.hasDropdown && (
-                    <div className="grid grid-cols-1 gap-4 pl-6 border-l-4 border-accent/20">
+                    <div className="pb-4 grid grid-cols-1 gap-2 pl-4 border-l-2 border-gray-100">
                       {link.children?.map((child, j) => (
                         <Link
                           key={`child-${j}`}
                           href={child.href}
-                          className="text-lg font-bold text-gray-400 hover:text-accent transition-colors py-1"
+                          className="text-base font-semibold text-gray-400 hover:text-primary transition-colors py-1"
                           onClick={() => setMobileOpen(false)}
                         >
                           {child.label}
@@ -252,18 +254,18 @@ export default function Navigation() {
                 </motion.div>
               ))}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: mainLinks.length * 0.05 }}
-                className="mt-10"
+                transition={{ delay: mainLinks.length * 0.04 + 0.1 }}
+                className="mt-8"
               >
                 <Link
                   href="/kontakt"
-                  className="w-full inline-flex items-center justify-center gap-4 px-10 py-6 bg-accent text-white text-2xl font-black uppercase tracking-[0.2em] rounded-3xl shadow-2xl shadow-accent/30"
+                  className="w-full inline-flex items-center justify-center gap-3 px-8 py-5 bg-primary text-white text-lg font-black uppercase tracking-[0.15em] rounded-2xl shadow-lg"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Kontakt
-                  <ArrowRight className="w-8 h-8" />
+                  Kontakt aufnehmen
+                  <ArrowRight className="w-6 h-6" />
                 </Link>
               </motion.div>
             </nav>
