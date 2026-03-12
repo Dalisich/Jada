@@ -148,15 +148,15 @@ export default function LeitungenPage() {
 
           <ScrollReveal>
             <Tabs defaultValue="kaelte" className="w-full">
-              <div className="flex justify-center mb-12">
-                <TabsList className="bg-white/5 border border-white/10 p-1.5 rounded-2xl backdrop-blur-md">
-                  <TabsTrigger value="kaelte" className="px-8 py-3 rounded-xl data-[state=active]:bg-accent data-[state=active]:text-primary font-bold transition-all">
+              <div className="flex justify-center mb-12 overflow-x-auto pb-1 -mx-6 px-6 sm:mx-0 sm:px-0">
+                <TabsList className="bg-white/5 border border-white/10 p-1.5 rounded-2xl backdrop-blur-md shrink-0 flex-nowrap">
+                  <TabsTrigger value="kaelte" className="px-4 sm:px-8 py-2.5 sm:py-3 rounded-xl data-[state=active]:bg-accent data-[state=active]:text-primary font-bold transition-all text-sm sm:text-base whitespace-nowrap">
                     Kältedämmungen
                   </TabsTrigger>
-                  <TabsTrigger value="heizung" className="px-8 py-3 rounded-xl data-[state=active]:bg-accent data-[state=active]:text-primary font-bold transition-all">
+                  <TabsTrigger value="heizung" className="px-4 sm:px-8 py-2.5 sm:py-3 rounded-xl data-[state=active]:bg-accent data-[state=active]:text-primary font-bold transition-all text-sm sm:text-base whitespace-nowrap">
                     Heizung & Sanitär
                   </TabsTrigger>
-                  <TabsTrigger value="dampf" className="px-8 py-3 rounded-xl data-[state=active]:bg-accent data-[state=active]:text-primary font-bold transition-all">
+                  <TabsTrigger value="dampf" className="px-4 sm:px-8 py-2.5 sm:py-3 rounded-xl data-[state=active]:bg-accent data-[state=active]:text-primary font-bold transition-all text-sm sm:text-base whitespace-nowrap">
                     Dampfleitungen
                   </TabsTrigger>
                 </TabsList>
