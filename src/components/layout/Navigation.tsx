@@ -56,6 +56,7 @@ const mainLinks = [
       },
     ],
   },
+  { label: "Dienstleistungen", href: "/dienstleistungen", large: true },
   { label: "Referenzen", href: "/referenzen", large: true },
   { label: "Blog", href: "/blog", large: true },
   { label: "Über uns", href: "/ueber-uns", large: true },
@@ -104,7 +105,7 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-2">
+            <div className="hidden lg:flex items-center gap-0.5">
               {mainLinks.map((link, i) => (
                 <div
                   key={`nav-link-${i}`}
@@ -117,9 +118,7 @@ export default function Navigation() {
                   <Link
                     href={link.href}
                     style={{ color: pathname.startsWith(link.href) ? '#E85E04' : TEXT_COLOR }}
-                    className={`relative px-5 py-3 font-bold tracking-tight transition-all duration-300 rounded-xl hover:bg-gray-50 ${
-                      link.large ? "text-lg" : "text-base"
-                    }`}
+                    className="relative px-3.5 py-2.5 text-[0.9rem] font-bold tracking-tight transition-all duration-300 rounded-xl hover:bg-gray-50 whitespace-nowrap"
                   >
                     {link.label}
                     {link.hasDropdown && (
