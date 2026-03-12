@@ -19,7 +19,7 @@ export default function ServiceHero({
   cta,
 }: ServiceHeroProps) {
   return (
-    <section className="relative h-[85vh] min-h-[700px] flex items-end overflow-hidden bg-primary pt-32 lg:pt-40">
+    <section className="relative h-[75vh] sm:h-[80vh] lg:h-[85vh] min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-end overflow-hidden bg-primary lg:pt-40">
       {/* 1. Base Layer: The Image with subtle Parallax-like scale */}
       <motion.div
         initial={{ scale: 1.1 }}

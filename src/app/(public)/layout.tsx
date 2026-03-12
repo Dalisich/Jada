@@ -11,6 +11,8 @@ export default function PublicLayout({
     <>
       <ScrollProgressBar />
       <Navigation />
+      {/* Mobile nav spacer: pushes content below the fixed pill nav on small screens */}
+      <div className="h-20 sm:h-24 lg:hidden" aria-hidden="true" />
       <main className="overflow-x-hidden max-w-full">{children}</main>
       <Footer />
     </>
