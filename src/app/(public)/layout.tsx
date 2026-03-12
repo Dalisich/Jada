@@ -11,7 +11,7 @@ export default function PublicLayout({
     <>
       <ScrollProgressBar />
       <Navigation />
-      <main>{children}</main>
+      <main className="overflow-x-hidden max-w-full">{children}</main>
       <Footer />
     </>
   );

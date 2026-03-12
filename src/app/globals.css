@@ -39,6 +39,8 @@
 
   html {
     scroll-behavior: auto; /* Lenis handles smooth scroll */
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   body {
@@ -46,6 +48,7 @@
     color: var(--color-text-primary);
     background-color: var(--color-surface-white);
     overflow-x: hidden;
+    max-width: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
