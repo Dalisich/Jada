@@ -52,7 +52,7 @@ export function TabsList({
   children: React.ReactNode;
   className?: string;
 }) {
-  return <div className={`flex ${className}`}>{children}</div>;
+  return <div className={className}>{children}</div>;
 }
 
 export function TabsTrigger({
