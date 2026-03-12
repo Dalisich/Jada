@@ -14,22 +14,22 @@ const materialRows = [
   {
     title: "Alufolie-Rabitz V2a (Standard-Ausführung)",
     text: "Als Standard-Umhüllung wird ein 6-eck Drahtgeflecht aus Chromstahl 0.7 mm verwendet. Wichtiger Hinweis: Bis auf sehr wenige Ausnahmen ist bei Feuerschutzisolierungen das Drahtgeflecht Teil des Systems, denn es muss die Isolierungsstruktur im Brandfall zusammenhalten.",
-    image: "/daemmung_lueftung.jpg", // Using Hero image as placeholder or similar technical look
+    image: "/Fotos/Lueftung/AlufolieRabitz.svg",
   },
   {
     title: "Alufolie (ohne Drahtgeflecht)",
     text: "In Zentralen und gut zugänglichen Räumen ist das Drahtgeflecht vielfach ein Störungsfaktor, da es oft vorkommt, dass man mit den Kleidern hängenbleibt. Zudem wirkt es optisch oft wie ein Fremdkörper. Da heutige Reinaluklebebänder sehr gute Klebeeigenschaften haben, kann bei sauberer Montage bei thermischen Isolierungen problemlos auf das Drahtgeflecht verzichtet werden.",
-    image: "/Fotos/Leitung/AluFolieThin.jpg", // Reusing a technical foil image
+    image: "/Fotos/Lueftung/AlufolieOhneDraht.svg",
   },
   {
     title: "Glasvliese",
     text: "Bei thermischen Isolierungen besteht die Möglichkeit, die Isolierung mit einem Glasvlies-Gewebe zu umhüllen. Diese Ausführung ist mechanisch gut belastbar und ideal bei Sichtdecken im Ladenbau. Die Standardfarbe ist schwarz; je nach Menge sind die Vliese auch eingefärbt oder alubedampft erhältlich.",
-    image: "/daemmung_lueftung.jpg", 
+    image: "/Fotos/Lueftung/Glasvliese.svg",
   },
   {
     title: "Blechumhüllungen",
     text: "Erhältlich in Aluman, Chromstahl, Kupfer oder verzinktem Stahlblech. Diese werden meist dort angebracht, wo die Standardausführungen den mechanischen oder optischen Anforderungen nicht genügen (z.B. im Aussenbereich). In der Regel wird Aluman-Blech verwendet. Technisches Detail: Wird die Isolierung mit Blech umhüllt, kann das Drahtgeflecht auch bei Feuerschutzisolierungen weggelassen werden.",
-    image: "/Fotos/Leitung/AluBlech.jpg", // Reusing metal cladding image
+    image: "/Fotos/Lueftung/Blechumhuellung.svg",
   },
 ];
 

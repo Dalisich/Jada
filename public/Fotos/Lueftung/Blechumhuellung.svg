@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111820"/>
+      <stop offset="100%" stop-color="#1a2030"/>
+    </linearGradient>
+    <!-- Aluman sheet - brushed aluminum look -->
+    <linearGradient id="aluSheet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c8cfd6"/>
+      <stop offset="20%" stop-color="#b8c0c8"/>
+      <stop offset="40%" stop-color="#d0d8e0"/>
+      <stop offset="55%" stop-color="#b0bac4"/>
+      <stop offset="75%" stop-color="#c4ccd4"/>
+      <stop offset="100%" stop-color="#a8b2bc"/>
+    </linearGradient>
+    <linearGradient id="aluSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#606870"/>
+      <stop offset="100%" stop-color="#9098a0"/>
+    </linearGradient>
+    <!-- Brushed lines horizontal -->
+    <pattern id="brushed" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <line x1="0" y1="2" x2="4" y2="2" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="insul" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c8a060"/>
+      <stop offset="100%" stop-color="#a07840"/>
+    </linearGradient>
+    <linearGradient id="insulSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7a5828"/>
+      <stop offset="100%" stop-color="#a07840"/>
+    </linearGradient>
+    <linearGradient id="duct" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a5568"/>
+      <stop offset="100%" stop-color="#2d3748"/>
+    </linearGradient>
+    <!-- Panel seam shadow -->
+    <linearGradient id="seamShadow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(0,0,0,0.3)"/>
+      <stop offset="40%" stop-color="rgba(0,0,0,0.05)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </linearGradient>
+    <linearGradient id="seamHighlight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.4)"/>
+      <stop offset="50%" stop-color="rgba(255,255,255,0.1)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.05" stroke="#5070a0" stroke-width="1">
+    <line x1="0" y1="100" x2="1600" y2="100"/>
+    <line x1="0" y1="200" x2="1600" y2="200"/>
+    <line x1="0" y1="300" x2="1600" y2="300"/>
+    <line x1="0" y1="400" x2="1600" y2="400"/>
+    <line x1="0" y1="500" x2="1600" y2="500"/>
+    <line x1="0" y1="600" x2="1600" y2="600"/>
+    <line x1="0" y1="700" x2="1600" y2="700"/>
+    <line x1="0" y1="800" x2="1600" y2="800"/>
+    <line x1="0" y1="900" x2="1600" y2="900"/>
+    <line x1="200" y1="0" x2="200" y2="1000"/>
+    <line x1="400" y1="0" x2="400" y2="1000"/>
+    <line x1="600" y1="0" x2="600" y2="1000"/>
+    <line x1="800" y1="0" x2="800" y2="1000"/>
+    <line x1="1000" y1="0" x2="1000" y2="1000"/>
+    <line x1="1200" y1="0" x2="1200" y2="1000"/>
+    <line x1="1400" y1="0" x2="1400" y2="1000"/>
+  </g>
+
+  <!-- INSULATION LAYER -->
+  <rect x="280" y="260" width="1040" height="440" rx="4" fill="url(#insul)" opacity="0.9"/>
+  <polygon points="280,260 200,320 200,780 280,700" fill="url(#insulSide)" opacity="0.85"/>
+  <rect x="280" y="700" width="1040" height="40" fill="#7a5828" opacity="0.6"/>
+
+  <!-- SHEET METAL CLADDING - top face -->
+  <!-- Panel 1 -->
+  <rect x="300" y="278" width="330" height="402" fill="url(#aluSheet)"/>
+  <rect x="300" y="278" width="330" height="402" fill="url(#brushed)" opacity="0.7"/>
+  <!-- Panel 2 -->
+  <rect x="630" y="278" width="335" height="402" fill="url(#aluSheet)"/>
+  <rect x="630" y="278" width="335" height="402" fill="url(#brushed)" opacity="0.7"/>
+  <!-- Panel 3 -->
+  <rect x="965" y="278" width="335" height="402" fill="url(#aluSheet)"/>
+  <rect x="965" y="278" width="335" height="402" fill="url(#brushed)" opacity="0.7"/>
+
+  <!-- Panel seams with shadow+highlight effect -->
+  <!-- Seam 1 at x=630 -->
+  <rect x="624" y="278" width="8" height="402" fill="url(#seamShadow)" opacity="0.8"/>
+  <rect x="630" y="278" width="6" height="402" fill="url(#seamHighlight)" opacity="0.9"/>
+  <line x1="628" y1="278" x2="628" y2="680" stroke="#404850" stroke-width="2.5"/>
+  <!-- Seam 2 at x=965 -->
+  <rect x="959" y="278" width="8" height="402" fill="url(#seamShadow)" opacity="0.8"/>
+  <rect x="965" y="278" width="6" height="402" fill="url(#seamHighlight)" opacity="0.9"/>
+  <line x1="963" y1="278" x2="963" y2="680" stroke="#404850" stroke-width="2.5"/>
+
+  <!-- Top fold/hem at top edge -->
+  <rect x="300" y="278" width="1000" height="12" fill="rgba(100,110,120,0.5)"/>
+  <line x1="300" y1="290" x2="1300" y2="290" stroke="rgba(150,160,170,0.6)" stroke-width="1.5"/>
+  <!-- Bottom hem -->
+  <rect x="300" y="668" width="1000" height="12" fill="rgba(60,70,80,0.5)"/>
+
+  <!-- Rivets / screws at panel seams -->
+  <!-- Seam 1 rivets -->
+  <circle cx="628" cy="316" r="5" fill="#8090a0" stroke="#606878" stroke-width="1.5"/>
+  <circle cx="628" cy="316" r="2" fill="#a0b0c0"/>
+  <circle cx="628" cy="420" r="5" fill="#8090a0" stroke="#606878" stroke-width="1.5"/>
+  <circle cx="628" cy="420" r="2" fill="#a0b0c0"/>
+  <circle cx="628" cy="524" r="5" fill="#8090a0" stroke="#606878" stroke-width="1.5"/>
+  <circle cx="628" cy="524" r="2" fill="#a0b0c0"/>
+  <circle cx="628" cy="628" r="5" fill="#8090a0" stroke="#606878" stroke-width="1.5"/>
+  <circle cx="628" cy="628" r="2" fill="#a0b0c0"/>
+  <!-- Seam 2 rivets -->
+  <circle cx="963" cy="316" r="5" fill="#8090a0" stroke="#606878" stroke-width="1.5"/>
+  <circle cx="963" cy="316" r="2" fill="#a0b0c0"/>
+  <circle cx="963" cy="420" r="5" fill="#8090a0" stroke="#606878" stroke-width="1.5"/>
+  <circle cx="963" cy="420" r="2" fill="#a0b0c0"/>
+  <circle cx="963" cy="524" r="5" fill="#8090a0" stroke="#606878" stroke-width="1.5"/>
+  <circle cx="963" cy="524" r="2" fill="#a0b0c0"/>
+  <circle cx="963" cy="628" r="5" fill="#8090a0" stroke="#606878" stroke-width="1.5"/>
+  <circle cx="963" cy="628" r="2" fill="#a0b0c0"/>
+
+  <!-- Left face of cladding -->
+  <polygon points="300,278 218,338 218,738 300,680" fill="url(#aluSide)"/>
+  <!-- Bottom strip -->
+  <rect x="300" y="680" width="1000" height="22" fill="#606870" opacity="0.9"/>
+
+  <!-- DUCT inner body -->
+  <rect x="380" y="350" width="840" height="260" fill="url(#duct)"/>
+  <polygon points="380,350 298,412 298,668 380,610" fill="#1e2a3a"/>
+  <rect x="298" y="412" width="82" height="20" fill="#3a4a5a" opacity="0.8"/>
+
+  <!-- Material swatches top-right -->
+  <rect x="1360" y="40" width="200" height="50" rx="8" fill="url(#aluSheet)"/>
+  <rect x="1360" y="40" width="200" height="50" rx="8" fill="url(#brushed)"/>
+  <text x="1380" y="73" font-family="Arial,sans-serif" font-size="17" fill="#2a3040" font-weight="700">Aluman</text>
+
+  <rect x="1360" y="100" width="200" height="50" rx="8">
+    <animate attributeName="fill" values="#c0c8d0;#d0d8e0;#c0c8d0" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="1360" y="100" width="200" height="50" rx="8" fill="#c4ccd4"/>
+  <text x="1380" y="133" font-family="Arial,sans-serif" font-size="17" fill="#4a5460" font-weight="700">Chromstahl</text>
+
+  <rect x="1360" y="160" width="200" height="50" rx="8" fill="#b87333"/>
+  <text x="1380" y="193" font-family="Arial,sans-serif" font-size="17" fill="#fff8f0" font-weight="700">Kupfer</text>
+
+  <rect x="1360" y="220" width="200" height="50" rx="8" fill="#8898a8"/>
+  <text x="1380" y="253" font-family="Arial,sans-serif" font-size="17" fill="#e0e8f0" font-weight="700">Verzinkter Stahl</text>
+
+  <!-- Callout box -->
+  <rect x="980" y="760" width="560" height="180" rx="16" fill="rgba(255,255,255,0.05)" stroke="rgba(140,160,180,0.25)" stroke-width="1.5"/>
+  <circle cx="1010" cy="800" r="7" fill="#c8cfd6"/>
+  <text x="1028" y="806" font-family="Arial,sans-serif" font-size="22" fill="#c0ccd8" font-weight="600">Aluman-Blechpaneel (Standard)</text>
+  <circle cx="1010" cy="838" r="5" fill="#8090a0" stroke="#606878" stroke-width="1.5"/>
+  <text x="1028" y="844" font-family="Arial,sans-serif" font-size="22" fill="#8898a8">Paneel-Stossnähte mit Nieten</text>
+  <circle cx="1010" cy="876" r="7" fill="#c8a060"/>
+  <text x="1028" y="882" font-family="Arial,sans-serif" font-size="22" fill="#8898a8">Isolierung (Brand- / Thermisch)</text>
+  <circle cx="1010" cy="914" r="6" fill="none" stroke="#6080a0" stroke-width="1.5"/>
+  <text x="1028" y="920" font-family="Arial,sans-serif" font-size="22" fill="#8898a8">Kein Drahtgeflecht nötig</text>
+
+  <!-- Title -->
+  <rect x="60" y="40" width="380" height="60" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(140,160,180,0.18)" stroke-width="1"/>
+  <text x="80" y="80" font-family="Arial,sans-serif" font-size="26" fill="#c8d4e0" font-weight="700" letter-spacing="2">BLECHUMHÜLLUNGEN · Robust</text>
+
+  <line x1="60" y1="960" x2="540" y2="960" stroke="#4a8cbf" stroke-width="2" opacity="0.4"/>
+  <text x="60" y="985" font-family="Arial,sans-serif" font-size="18" fill="#5070a0">JADA · Lüftungsdämmung · Aussen / Mechanisch</text>
+</svg>

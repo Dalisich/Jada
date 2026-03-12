@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1e38"/>
+      <stop offset="100%" stop-color="#1a2f52"/>
+    </linearGradient>
+    <!-- Silver foil gradient -->
+    <linearGradient id="foil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d8dfe8"/>
+      <stop offset="30%" stop-color="#b8c4d0"/>
+      <stop offset="60%" stop-color="#c8d4e0"/>
+      <stop offset="100%" stop-color="#a0adb8"/>
+    </linearGradient>
+    <!-- Foil side -->
+    <linearGradient id="foilSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8090a0"/>
+      <stop offset="100%" stop-color="#b0bcc8"/>
+    </linearGradient>
+    <!-- Insulation gradient -->
+    <linearGradient id="insul" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c8a060"/>
+      <stop offset="100%" stop-color="#a07840"/>
+    </linearGradient>
+    <!-- Insulation side -->
+    <linearGradient id="insulSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7a5828"/>
+      <stop offset="100%" stop-color="#a07840"/>
+    </linearGradient>
+    <!-- Duct steel -->
+    <linearGradient id="duct" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a5568"/>
+      <stop offset="100%" stop-color="#2d3748"/>
+    </linearGradient>
+    <!-- Mesh chrome -->
+    <linearGradient id="meshChrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8edf2" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#c0cad4" stop-opacity="0.7"/>
+    </linearGradient>
+    <!-- Glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Hex pattern -->
+    <pattern id="hexPat" x="0" y="0" width="28" height="32" patternUnits="userSpaceOnUse">
+      <polygon points="14,1 25,7 25,19 14,25 3,19 3,7" fill="none" stroke="#b0bcc8" stroke-width="1.2" opacity="0.85"/>
+      <polygon points="14,17 25,23 25,35 14,41 3,35 3,23" fill="none" stroke="#b0bcc8" stroke-width="1.2" opacity="0.85"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.06" stroke="#7090c0" stroke-width="1">
+    <line x1="0" y1="100" x2="1600" y2="100"/>
+    <line x1="0" y1="200" x2="1600" y2="200"/>
+    <line x1="0" y1="300" x2="1600" y2="300"/>
+    <line x1="0" y1="400" x2="1600" y2="400"/>
+    <line x1="0" y1="500" x2="1600" y2="500"/>
+    <line x1="0" y1="600" x2="1600" y2="600"/>
+    <line x1="0" y1="700" x2="1600" y2="700"/>
+    <line x1="0" y1="800" x2="1600" y2="800"/>
+    <line x1="0" y1="900" x2="1600" y2="900"/>
+    <line x1="200" y1="0" x2="200" y2="1000"/>
+    <line x1="400" y1="0" x2="400" y2="1000"/>
+    <line x1="600" y1="0" x2="600" y2="1000"/>
+    <line x1="800" y1="0" x2="800" y2="1000"/>
+    <line x1="1000" y1="0" x2="1000" y2="1000"/>
+    <line x1="1200" y1="0" x2="1200" y2="1000"/>
+    <line x1="1400" y1="0" x2="1400" y2="1000"/>
+  </g>
+
+  <!-- === ISOMETRIC DUCT ASSEMBLY === -->
+  <!-- Positioned at center: duct going left to right, slight 3/4 view -->
+
+  <!-- INSULATION LAYER - Bottom face (top side shown) -->
+  <!-- Top face of insulation block -->
+  <rect x="280" y="260" width="1040" height="440" rx="4" fill="url(#insul)" opacity="0.9"/>
+  <!-- Left face of insulation -->
+  <polygon points="280,260 200,320 200,780 280,700" fill="url(#insulSide)" opacity="0.85"/>
+  <!-- Bottom face hint -->
+  <rect x="280" y="700" width="1040" height="40" fill="#7a5828" opacity="0.6"/>
+
+  <!-- FOIL LAYER - top face -->
+  <rect x="300" y="278" width="1000" height="402" rx="2" fill="url(#foil)"/>
+  <!-- Foil left face -->
+  <polygon points="300,278 218,338 218,738 300,680" fill="url(#foilSide)"/>
+  <!-- Foil bottom strip -->
+  <rect x="300" y="680" width="1000" height="22" fill="#8898a8" opacity="0.8"/>
+
+  <!-- Foil horizontal seam lines -->
+  <line x1="300" y1="410" x2="1300" y2="410" stroke="#90a0b0" stroke-width="1.5" opacity="0.6"/>
+  <line x1="300" y1="540" x2="1300" y2="540" stroke="#90a0b0" stroke-width="1.5" opacity="0.6"/>
+  <!-- Foil tape overlaps -->
+  <rect x="300" y="406" width="1000" height="8" fill="#c8d4e0" opacity="0.5"/>
+  <rect x="300" y="536" width="1000" height="8" fill="#c8d4e0" opacity="0.5"/>
+
+  <!-- WIRE MESH OVERLAY on top face -->
+  <rect x="300" y="278" width="1000" height="402" fill="url(#hexPat)" opacity="0.9"/>
+  <!-- Mesh wire border -->
+  <rect x="300" y="278" width="1000" height="402" fill="none" stroke="#b0bcc8" stroke-width="2" opacity="0.6"/>
+
+  <!-- DUCT inner body -->
+  <rect x="380" y="350" width="840" height="260" fill="url(#duct)"/>
+  <!-- Duct left end -->
+  <polygon points="380,350 298,412 298,668 380,610" fill="#1e2a3a"/>
+  <!-- Duct open left end highlight -->
+  <rect x="298" y="412" width="82" height="20" fill="#3a4a5a" opacity="0.8"/>
+
+  <!-- Duct surface detail lines -->
+  <line x1="380" y1="390" x2="1220" y2="390" stroke="#5a6880" stroke-width="1" opacity="0.5"/>
+  <line x1="380" y1="450" x2="1220" y2="450" stroke="#5a6880" stroke-width="1" opacity="0.5"/>
+  <line x1="380" y1="550" x2="1220" y2="550" stroke="#5a6880" stroke-width="1" opacity="0.5"/>
+  <line x1="380" y1="570" x2="1220" y2="570" stroke="#5a6880" stroke-width="1" opacity="0.5"/>
+
+  <!-- === DETAIL CALLOUT - bottom right === -->
+  <!-- Callout box -->
+  <rect x="980" y="760" width="560" height="180" rx="16" fill="rgba(255,255,255,0.06)" stroke="rgba(176,188,200,0.3)" stroke-width="1.5"/>
+
+  <!-- Layer legend dots -->
+  <!-- Mesh -->
+  <circle cx="1010" cy="800" r="7" fill="none" stroke="#b0bcc8" stroke-width="1.5"/>
+  <text x="1028" y="806" font-family="Arial,sans-serif" font-size="22" fill="#c8d4e0" font-weight="600">Chromstahl-Drahtgeflecht 6-eck 0.7 mm</text>
+  <!-- Foil -->
+  <circle cx="1010" cy="838" r="7" fill="#b8c4d0"/>
+  <text x="1028" y="844" font-family="Arial,sans-serif" font-size="22" fill="#a0b0c0">Reinalufolie 2 × 0.02 mm</text>
+  <!-- Insulation -->
+  <circle cx="1010" cy="876" r="7" fill="#c8a060"/>
+  <text x="1028" y="882" font-family="Arial,sans-serif" font-size="22" fill="#a0b0c0">Isolierung (Mineralwolle / PUR)</text>
+  <!-- Duct -->
+  <circle cx="1010" cy="914" r="7" fill="#4a5568"/>
+  <text x="1028" y="920" font-family="Arial,sans-serif" font-size="22" fill="#a0b0c0">Lüftungskanal (Stahlblech)</text>
+
+  <!-- Title label top-left -->
+  <rect x="60" y="40" width="480" height="60" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(176,188,200,0.2)" stroke-width="1"/>
+  <text x="80" y="80" font-family="Arial,sans-serif" font-size="26" fill="#d0dce8" font-weight="700" letter-spacing="2">ALUFOLIE-RABITZ V2a · Standard</text>
+
+  <!-- Hex detail zoom circle top-right -->
+  <circle cx="1480" cy="140" r="90" fill="rgba(15,30,56,0.7)" stroke="#b0bcc8" stroke-width="2"/>
+  <!-- Zoomed hex pattern -->
+  <g transform="translate(1390,50) scale(2.4)">
+    <polygon points="37,16 55,26 55,48 37,58 19,48 19,26" fill="none" stroke="#b8c8d8" stroke-width="1.8"/>
+    <polygon points="37,48 55,58 55,80 37,90 19,80 19,58" fill="none" stroke="#b8c8d8" stroke-width="1.8"/>
+    <polygon points="60,16 78,26 78,48 60,58 42,48 42,26" fill="none" stroke="#b8c8d8" stroke-width="1.8"/>
+  </g>
+  <text x="1480" y="256" font-family="Arial,sans-serif" font-size="18" fill="#90a0b0" text-anchor="middle">Detail: 6-Eck Geflecht</text>
+
+  <!-- Accent line bottom -->
+  <line x1="60" y1="960" x2="540" y2="960" stroke="#4a8cbf" stroke-width="2" opacity="0.5"/>
+  <text x="60" y="985" font-family="Arial,sans-serif" font-size="18" fill="#6080a0">JADA · Lüftungsdämmung · Feuerschutz-Standard</text>
+</svg>
