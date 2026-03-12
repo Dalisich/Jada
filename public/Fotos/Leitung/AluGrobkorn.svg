@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="grobBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c0c4c0"/>
+      <stop offset="35%" style="stop-color:#d8dcd6"/>
+      <stop offset="65%" style="stop-color:#b0b4b0"/>
+      <stop offset="100%" style="stop-color:#c4c8c4"/>
+    </linearGradient>
+    <linearGradient id="grobSheen" x1="0%" y1="0%" x2="5%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.35"/>
+      <stop offset="45%" style="stop-color:#ffffff;stop-opacity:0.05"/>
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.2"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noiseOut"/>
+      <feColorMatrix type="saturate" values="0" in="noiseOut" result="grayNoise"/>
+      <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply" result="blended"/>
+      <feComposite in="blended" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <filter id="dropShadow">
+      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="600" height="400" fill="#252830"/>
+  <!-- Shadow -->
+  <ellipse cx="300" cy="382" rx="210" ry="20" fill="#0d1018" opacity="0.5"/>
+  <!-- Pipe body with texture -->
+  <rect x="88" y="78" width="424" height="284" rx="142" fill="url(#grobBase)" filter="url(#dropShadow)"/>
+  <!-- Grain overlay -->
+  <rect x="88" y="78" width="424" height="284" rx="142" fill="url(#grobBase)" filter="url(#grain)" opacity="0.7"/>
+  <!-- Highlight -->
+  <rect x="88" y="78" width="424" height="284" rx="142" fill="url(#grobSheen)"/>
+  <!-- Stucco texture simulation via small dots/bumps -->
+  <g opacity="0.4" fill="#888c88">
+    <circle cx="150" cy="140" r="2.5"/>
+    <circle cx="175" cy="160" r="2"/>
+    <circle cx="200" cy="130" r="3"/>
+    <circle cx="230" cy="155" r="2.5"/>
+    <circle cx="260" cy="135" r="2"/>
+    <circle cx="290" cy="150" r="3"/>
+    <circle cx="320" cy="128" r="2.5"/>
+    <circle cx="350" cy="148" r="2"/>
+    <circle cx="380" cy="138" r="3"/>
+    <circle cx="410" cy="155" r="2.5"/>
+    <circle cx="440" cy="132" r="2"/>
+    <circle cx="160" cy="200" r="3"/>
+    <circle cx="195" cy="215" r="2.5"/>
+    <circle cx="225" cy="200" r="2"/>
+    <circle cx="255" cy="218" r="3"/>
+    <circle cx="285" cy="205" r="2.5"/>
+    <circle cx="315" cy="215" r="2"/>
+    <circle cx="345" cy="202" r="3"/>
+    <circle cx="375" cy="215" r="2.5"/>
+    <circle cx="405" cy="200" r="2"/>
+    <circle cx="435" cy="215" r="3"/>
+    <circle cx="155" cy="265" r="2.5"/>
+    <circle cx="185" cy="280" r="2"/>
+    <circle cx="215" cy="268" r="3"/>
+    <circle cx="245" cy="278" r="2.5"/>
+    <circle cx="275" cy="265" r="2"/>
+    <circle cx="305" cy="278" r="3"/>
+    <circle cx="335" cy="265" r="2.5"/>
+    <circle cx="365" cy="278" r="2"/>
+    <circle cx="395" cy="266" r="3"/>
+    <circle cx="430" cy="275" r="2.5"/>
+  </g>
+  <!-- Border -->
+  <rect x="88" y="78" width="424" height="284" rx="142" fill="none" stroke="#909890" stroke-width="1" opacity="0.4"/>
+  <!-- Label -->
+  <rect x="185" y="338" width="230" height="36" rx="8" fill="#0d1018" opacity="0.65"/>
+  <text x="300" y="356" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#c0c8c0" text-anchor="middle" letter-spacing="2">ALU-GROBKORNFOLIE</text>
+  <text x="300" y="369" font-family="Arial, sans-serif" font-size="10" fill="#8898a0" text-anchor="middle">ca. 0.25 mm</text>
+</svg>

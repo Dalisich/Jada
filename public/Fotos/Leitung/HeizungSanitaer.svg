@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="warmBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1008"/>
+      <stop offset="100%" style="stop-color:#281608"/>
+    </linearGradient>
+    <linearGradient id="warmPipe" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7a2800"/>
+      <stop offset="30%" style="stop-color:#a03000"/>
+      <stop offset="65%" style="stop-color:#6a2000"/>
+      <stop offset="100%" style="stop-color:#501800"/>
+    </linearGradient>
+    <linearGradient id="pirInsul" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c8780a"/>
+      <stop offset="35%" style="stop-color:#e08a10"/>
+      <stop offset="65%" style="stop-color:#b06808"/>
+      <stop offset="100%" style="stop-color:#905808"/>
+    </linearGradient>
+    <linearGradient id="coldPipe" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3a5c"/>
+      <stop offset="50%" style="stop-color:#1e4570"/>
+      <stop offset="100%" style="stop-color:#0d2038"/>
+    </linearGradient>
+    <linearGradient id="greyInsul" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#585860"/>
+      <stop offset="50%" style="stop-color:#686870"/>
+      <stop offset="100%" style="stop-color:#484850"/>
+    </linearGradient>
+    <radialGradient id="warmGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#ff6010;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#ff6010;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#warmBg)"/>
+  <!-- Warm glow -->
+  <circle cx="350" cy="250" r="280" fill="url(#warmGlow)"/>
+  <!-- Background particle ambiance -->
+  <circle cx="80" cy="100" r="50" fill="#ff4000" opacity="0.05"/>
+  <circle cx="720" cy="380" r="70" fill="#ff6000" opacity="0.06"/>
+  <!-- Main heating pipe (orange PIR insulation) -->
+  <rect x="55" y="160" width="690" height="145" rx="72" fill="url(#pirInsul)"/>
+  <!-- Surface lines typical of PIR shells -->
+  <line x1="70" y1="232" x2="730" y2="232" stroke="#f09020" stroke-width="1" opacity="0.4"/>
+  <line x1="68" y1="240" x2="732" y2="240" stroke="#a07010" stroke-width="0.5" opacity="0.3"/>
+  <rect x="55" y="160" width="690" height="145" rx="72" fill="none" stroke="#d07808" stroke-width="1.5" opacity="0.5"/>
+  <!-- Inner pipe (hot) -->
+  <rect x="80" y="190" width="640" height="85" rx="42" fill="url(#warmPipe)"/>
+  <rect x="80" y="190" width="640" height="25" rx="42" fill="#c04000" opacity="0.3"/>
+  <!-- Heat shimmer lines (wavy) -->
+  <path d="M 200 158 Q 210 140 205 122 Q 200 104 210 88" stroke="#f08020" stroke-width="1.5" fill="none" opacity="0.35" stroke-linecap="round"/>
+  <path d="M 350 158 Q 362 138 356 118 Q 350 98 362 80" stroke="#f08020" stroke-width="1.5" fill="none" opacity="0.3" stroke-linecap="round"/>
+  <path d="M 500 158 Q 512 140 507 122 Q 502 104 514 88" stroke="#f08020" stroke-width="1.5" fill="none" opacity="0.35" stroke-linecap="round"/>
+  <!-- Secondary cold water pipe (grey insulation) -->
+  <rect x="100" y="355" width="400" height="80" rx="40" fill="url(#greyInsul)" opacity="0.9"/>
+  <rect x="115" y="373" width="370" height="46" rx="23" fill="url(#coldPipe)" opacity="0.9"/>
+  <rect x="100" y="355" width="400" height="80" rx="40" fill="none" stroke="#606068" stroke-width="1" opacity="0.5"/>
+  <!-- Condensation on cold pipe -->
+  <circle cx="160" cy="380" r="2.5" fill="#a0c8f0" opacity="0.7"/>
+  <circle cx="200" cy="393" r="2" fill="#a0c8f0" opacity="0.5"/>
+  <circle cx="240" cy="376" r="3" fill="#a0c8f0" opacity="0.6"/>
+  <circle cx="300" cy="385" r="2" fill="#a0c8f0" opacity="0.5"/>
+  <!-- Labels -->
+  <rect x="540" y="370" width="210" height="70" rx="10" fill="#100a04" opacity="0.75"/>
+  <text x="645" y="392" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e08820" text-anchor="middle">HEIZLEITUNGEN</text>
+  <text x="645" y="407" font-family="Arial, sans-serif" font-size="10" fill="#a06010" text-anchor="middle">PIR-Schalen bis 80°C</text>
+  <text x="645" y="427" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#60a0d0" text-anchor="middle">KALTWASSER</text>
+  <text x="645" y="442" font-family="Arial, sans-serif" font-size="10" fill="#3870a0" text-anchor="middle">mit Dampfsperranstrich</text>
+  <!-- Temp badge -->
+  <rect x="620" y="50" width="130" height="55" rx="10" fill="#100a04" opacity="0.8"/>
+  <text x="685" y="72" font-family="Arial, sans-serif" font-size="11" fill="#e08020" text-anchor="middle" font-weight="bold">VORLAUF</text>
+  <text x="685" y="95" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f09030" text-anchor="middle">80°C</text>
+</svg>

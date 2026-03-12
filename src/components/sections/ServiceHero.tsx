@@ -8,6 +8,7 @@ interface ServiceHeroProps {
   description: string;
   image: string;
   breadcrumb: { label: string; href: string }[];
+  cta?: { label: string; href: string };
 }
 
 export default function ServiceHero({
@@ -15,19 +16,20 @@ export default function ServiceHero({
   description,
   image,
   breadcrumb,
+  cta,
 }: ServiceHeroProps) {
   return (
-    <section className="relative h-[75vh] min-h-[600px] flex items-end overflow-hidden bg-primary pt-32 lg:pt-40">
+    <section className="relative h-[85vh] min-h-[700px] flex items-end overflow-hidden bg-primary pt-32 lg:pt-40">
       {/* 1. Base Layer: The Image with subtle Parallax-like scale */}
       <motion.div
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-luminosity"
+        className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity"
         style={{ backgroundImage: `url(${image})` }}
       />
-
-      {/* 2. Pattern Layer: Enhanced Technical Blueprint Grid */}
+      
+      {/* ... rest of the layers ... */}
       <div 
         className="absolute inset-0 opacity-[0.08] pointer-events-none"
         style={{
@@ -40,7 +42,6 @@ export default function ServiceHero({
         }}
       />
 
-      {/* 2b. Blueprint Lines (Simulated SVG) */}
       <svg className="absolute inset-0 w-full h-full opacity-[0.05] pointer-events-none transition-opacity duration-1000">
         <defs>
           <pattern id="blueprint-grid" width="100" height="100" patternUnits="userSpaceOnUse">
@@ -53,11 +54,9 @@ export default function ServiceHero({
         <rect width="100%" height="100%" fill="url(#blueprint-grid)" />
       </svg>
 
-      {/* 3. Gradient Layer: Deep Multi-layered shadows for contrast */}
       <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/85 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-transparent to-transparent" />
 
-      {/* 4. Decorative Layer: Floating Orbs & Geometric accents */}
       <motion.div 
         animate={{ 
           y: [0, -20, 0],
@@ -76,7 +75,6 @@ export default function ServiceHero({
       />
 
       <div className="relative z-10 max-w-[1280px] mx-auto px-6 pb-24 w-full">
-        {/* Breadcrumb - Clean Premium Glassmorphism */}
         <ScrollReveal delay={0.1}>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 mb-10 shadow-lg">
             <nav className="flex items-center gap-3 text-sm text-surface-white/60 font-medium whitespace-nowrap overflow-x-auto scroller-hide max-w-[85vw]">
@@ -107,11 +105,22 @@ export default function ServiceHero({
           </ScrollReveal>
 
           <ScrollReveal delay={0.4} className="max-w-3xl">
-            <div className="flex gap-6 items-start">
-              <div className="w-12 h-[1px] bg-accent mt-4 shrink-0 hidden md:block" />
-              <p className="text-white/80 text-xl md:text-2xl leading-relaxed font-light">
-                {description}
-              </p>
+            <div className="flex flex-col gap-10 items-start">
+              <div className="flex gap-6 items-start">
+                <div className="w-12 h-[1px] bg-accent mt-4 shrink-0 hidden md:block" />
+                <p className="text-white/80 text-xl md:text-2xl leading-relaxed font-light">
+                  {description}
+                </p>
+              </div>
+
+              {cta && (
+                <a
+                  href={cta.href}
+                  className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-accent text-primary font-bold rounded-2xl btn-glow group text-xl hover-lift transition-all"
+                >
+                  {cta.label}
+                </a>
+              )}
             </div>
           </ScrollReveal>
         </div>

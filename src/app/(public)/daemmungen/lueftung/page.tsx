@@ -1,94 +1,130 @@
 import { Metadata } from "next";
-import { Flame, Wind, Gauge, Wrench } from "lucide-react";
+import { Info, ShieldCheck } from "lucide-react";
 import ServiceHero from "@/components/sections/ServiceHero";
-import ScrollReveal, { ScrollRevealItem } from "@/components/ui/ScrollReveal";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Lüftungsdämmungen",
+  title: "Materialien & Umhüllungen | Lüftungsdämmung | JADA",
   description:
-    "Lüftungsdämmungen mit Mineralwollprodukten – nicht brennbar und beständig gegen sehr hohe Temperaturen. JADA Isolierungen GmbH.",
+    "Technische Details und Umhüllungen für Lüftungsdämmungen nach Schweizer Standard. Alufolie-Rabitz, Glasvliese und Blechumhüllungen.",
 };
 
-const advantages = [
+const materialRows = [
   {
-    icon: Flame,
-    title: "Nicht brennbar",
-    description: "Mineralwollprodukte sind absolut nicht brennbar und bieten höchsten Brandschutz.",
+    title: "Alufolie-Rabitz V2a (Standard-Ausführung)",
+    text: "Als Standard-Umhüllung wird ein 6-eck Drahtgeflecht aus Chromstahl 0.7 mm verwendet. Wichtiger Hinweis: Bis auf sehr wenige Ausnahmen ist bei Feuerschutzisolierungen das Drahtgeflecht Teil des Systems, denn es muss die Isolierungsstruktur im Brandfall zusammenhalten.",
+    image: "/daemmung_lueftung.jpg", // Using Hero image as placeholder or similar technical look
   },
   {
-    icon: Wind,
-    title: "Temperaturbeständig",
-    description: "Beständig gegen sehr hohe Temperaturen – ideal für Lüftungsanlagen.",
+    title: "Alufolie (ohne Drahtgeflecht)",
+    text: "In Zentralen und gut zugänglichen Räumen ist das Drahtgeflecht vielfach ein Störungsfaktor, da es oft vorkommt, dass man mit den Kleidern hängenbleibt. Zudem wirkt es optisch oft wie ein Fremdkörper. Da heutige Reinaluklebebänder sehr gute Klebeeigenschaften haben, kann bei sauberer Montage bei thermischen Isolierungen problemlos auf das Drahtgeflecht verzichtet werden.",
+    image: "/Fotos/Leitung/AluFolieThin.jpg", // Reusing a technical foil image
   },
   {
-    icon: Gauge,
-    title: "Hocheffizient",
-    description: "Optimale Dämmwerte durch professionelle Verarbeitung und passgenaue Ausführung.",
+    title: "Glasvliese",
+    text: "Bei thermischen Isolierungen besteht die Möglichkeit, die Isolierung mit einem Glasvlies-Gewebe zu umhüllen. Diese Ausführung ist mechanisch gut belastbar und ideal bei Sichtdecken im Ladenbau. Die Standardfarbe ist schwarz; je nach Menge sind die Vliese auch eingefärbt oder alubedampft erhältlich.",
+    image: "/daemmung_lueftung.jpg", 
   },
   {
-    icon: Wrench,
-    title: "Optimal ausgerüstet",
-    description: "Modernste Werkzeuge und Techniken für eine effiziente, saubere Ausführung vor Ort.",
+    title: "Blechumhüllungen",
+    text: "Erhältlich in Aluman, Chromstahl, Kupfer oder verzinktem Stahlblech. Diese werden meist dort angebracht, wo die Standardausführungen den mechanischen oder optischen Anforderungen nicht genügen (z.B. im Aussenbereich). In der Regel wird Aluman-Blech verwendet. Technisches Detail: Wird die Isolierung mit Blech umhüllt, kann das Drahtgeflecht auch bei Feuerschutzisolierungen weggelassen werden.",
+    image: "/Fotos/Leitung/AluBlech.jpg", // Reusing metal cladding image
   },
 ];
 
 export default function LueftungPage() {
   return (
-    <>
+    <div className="bg-surface-warm min-h-screen">
+      {/* Sektion 1: Hero-Bereich */}
       <ServiceHero
-        title="Lüftungsdämmungen"
-        description="Hocheffiziente Dämmungen mit Mineralwollprodukten – nicht brennbar und temperaturbeständig."
-        image="https://images.unsplash.com/photo-1513360492081-3067eb215160?w=1920&q=80"
+        title="Materialien und Umhüllungen für Lüftungsdämmungen"
+        description="Die in der Schweiz verwendeten Materialien für Lüftungsdämmungen sind bis auf sehr wenige Ausnahmen mit einer aufkaschierten Reinaluminiumfolie versehen."
+        image="/daemmung_lueftung.jpg"
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Dämmungen", href: "/daemmungen" },
           { label: "Lüftungsdämmungen", href: "/daemmungen/lueftung" },
         ]}
+        cta={{
+          label: "Jetzt Kontakt aufnehmen",
+          href: "/kontakt",
+        }}
       />
 
+      {/* Sektion 2: Der Schweizer Standard */}
       <section className="section-padding bg-surface-white">
         <div className="max-w-[1280px] mx-auto px-6">
-          <ScrollReveal className="max-w-3xl mb-16">
-            <h2 className="text-primary mb-6">Mineralwolle für maximalen Schutz</h2>
-            <div className="space-y-4 text-text-secondary leading-relaxed">
-              <p>
-                Unsere Lüftungsdämmungen werden ausschliesslich mit hochwertigen
-                Mineralwollprodukten ausgeführt. Diese Materialien sind absolut nicht
-                brennbar und beständig gegen sehr hohe Temperaturen – ideale
-                Eigenschaften für die Isolierung von Lüftungsanlagen.
-              </p>
-              <p>
-                Wir garantieren eine hocheffiziente, optimal ausgerüstete Ausführung.
-                Unsere Spezialisten verfügen über langjährige Erfahrung und arbeiten
-                mit modernsten Werkzeugen, um beste Ergebnisse zu erzielen.
-              </p>
+          <ScrollReveal>
+            <div className="bg-primary/5 border border-primary/10 rounded-[2.5rem] p-10 md:p-12 flex flex-col md:flex-row gap-8 items-center">
+              <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-sm border border-black/5 shrink-0">
+                <Info className="w-8 h-8 text-primary" />
+              </div>
+              <div className="max-w-3xl">
+                <h2 className="text-xl font-bold text-primary uppercase tracking-widest mb-3 flex items-center gap-3">
+                  <ShieldCheck className="w-5 h-5 text-secondary" />
+                  Der Schweizer Standard
+                </h2>
+                <p className="text-primary text-lg md:text-xl font-medium leading-relaxed">
+                  Standardmässig verwenden wir Reinaluminium-Folie: 2-lagig à je 0.02 mm, dazwischen mit polyethylener Gitterverstärkung ca. 54 gr/m2.
+                </p>
+              </div>
             </div>
-          </ScrollReveal>
-
-          <ScrollReveal staggerChildren={0.15} className="grid sm:grid-cols-2 gap-8">
-            {advantages.map((advantage, i) => (
-              <ScrollRevealItem key={`adv-${i}`}>
-                <div className="flex gap-5 p-6 rounded-xl bg-surface-warm group hover:bg-primary transition-colors duration-500">
-                  <div className="shrink-0 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                    <advantage.icon className="w-6 h-6 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-primary group-hover:text-white transition-colors mb-2">
-                      {advantage.title}
-                    </h3>
-                    <p className="text-sm text-text-secondary group-hover:text-white/70 transition-colors leading-relaxed">
-                      {advantage.description}
-                    </p>
-                  </div>
-                </div>
-              </ScrollRevealItem>
-            ))}
           </ScrollReveal>
         </div>
       </section>
 
+      {/* Sektion 3: Die Umhüllungen (Zig-Zag Layout) */}
+      <section className="bg-surface-white">
+        {materialRows.map((row, i) => (
+          <div 
+            key={i} 
+            className={`py-20 md:py-32 ${i % 2 === 0 ? "bg-surface-warm/30" : "bg-white"}`}
+          >
+            <div className="max-w-[1280px] mx-auto px-6">
+              <div className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-12 md:gap-24`}>
+                {/* Image Component */}
+                <ScrollReveal 
+                  direction={i % 2 === 0 ? "left" : "right"}
+                  className="w-full md:w-1/2"
+                >
+                  <div className="relative aspect-[16/10] rounded-[3rem] overflow-hidden shadow-2xl border border-black/5 group">
+                    <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-700" />
+                    <img 
+                      src={row.image} 
+                      alt={row.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    />
+                    <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-[3rem]" />
+                  </div>
+                </ScrollReveal>
+
+                {/* Text Component */}
+                <ScrollReveal 
+                  direction={i % 2 === 0 ? "right" : "left"}
+                  className="w-full md:w-1/2"
+                >
+                  <div className="flex flex-col">
+                    <div className="mb-6 flex items-center gap-4">
+                      <div className="h-px w-12 bg-secondary" />
+                      <span className="text-secondary font-bold uppercase tracking-widest text-sm">Umhüllung {String(i + 1).padStart(2, '0')}</span>
+                    </div>
+                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-8 leading-tight">
+                      {row.title}
+                    </h3>
+                    <p className="text-text-secondary text-lg md:text-xl leading-relaxed whitespace-pre-line">
+                      {row.text}
+                    </p>
+                  </div>
+                </ScrollReveal>
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* Sektion 4: Footer-CTA */}
       <CTASection />
-    </>
+    </div>
   );
 }

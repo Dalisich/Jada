@@ -98,16 +98,22 @@ export function ScrollRevealItem({
   className = "",
   direction = "up",
   duration = 0.8,
+  delay = 0,
 }: {
   children: ReactNode;
   className?: string;
   direction?: "up" | "down" | "left" | "right";
   duration?: number;
+  delay?: number;
 }) {
   const variants = getVariants(direction, duration);
 
   return (
-    <motion.div className={className} variants={variants}>
+    <motion.div 
+      className={className} 
+      variants={variants}
+      transition={{ delay }}
+    >
       {children}
     </motion.div>
   );

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="steamBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0e0e0e"/>
+      <stop offset="100%" style="stop-color:#1a1208"/>
+    </linearGradient>
+    <linearGradient id="steelPipe" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#606060"/>
+      <stop offset="25%" style="stop-color:#888880"/>
+      <stop offset="55%" style="stop-color:#505050"/>
+      <stop offset="100%" style="stop-color:#383830"/>
+    </linearGradient>
+    <linearGradient id="mineralWool" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c0a060"/>
+      <stop offset="40%" style="stop-color:#d0b070"/>
+      <stop offset="70%" style="stop-color:#a88848"/>
+      <stop offset="100%" style="stop-color:#906830"/>
+    </linearGradient>
+    <linearGradient id="aluJacket" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d0d4d8"/>
+      <stop offset="30%" style="stop-color:#e8ecf0"/>
+      <stop offset="60%" style="stop-color:#b8bcbf"/>
+      <stop offset="100%" style="stop-color:#c8ccce"/>
+    </linearGradient>
+    <radialGradient id="heatGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" style="stop-color:#ff8000;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#ff8000;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="steamBlur">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#steamBg)"/>
+  <!-- Heat glow -->
+  <circle cx="400" cy="250" r="260" fill="url(#heatGlow)"/>
+  <!-- Steam wisps rising -->
+  <g opacity="0.3" filter="url(#steamBlur)">
+    <path d="M 200 170 Q 190 140 205 110 Q 220 80 205 50" stroke="#e0e0e0" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M 320 165 Q 308 130 322 95 Q 336 60 320 30" stroke="#d8d8d8" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M 450 168 Q 465 132 450 97 Q 435 62 452 28" stroke="#ddd" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M 580 172 Q 595 138 582 104 Q 569 70 585 38" stroke="#d8d8d8" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Main insulated steam pipe -->
+  <!-- Outer ALU jacket -->
+  <rect x="50" y="165" width="700" height="170" rx="85" fill="url(#aluJacket)"/>
+  <!-- ALU horizontal seam -->
+  <line x1="60" y1="250" x2="740" y2="250" stroke="#b0b4b8" stroke-width="1.5" opacity="0.5"/>
+  <!-- Mineral wool layer visible at cross-section style hint -->
+  <rect x="55" y="170" width="690" height="160" rx="80" fill="url(#mineralWool)" opacity="0.08"/>
+  <!-- Steel pipe (inner) -->
+  <rect x="90" y="195" width="620" height="110" rx="55" fill="url(#steelPipe)"/>
+  <!-- Steel highlights -->
+  <rect x="90" y="195" width="620" height="30" rx="55" fill="#a0a098" opacity="0.3"/>
+  <rect x="90" y="195" width="620" height="110" rx="55" fill="none" stroke="#787870" stroke-width="1.5" opacity="0.6"/>
+  <!-- Welding seam -->
+  <line x1="340" y1="195" x2="340" y2="305" stroke="#484840" stroke-width="3" opacity="0.5"/>
+  <line x1="460" y1="195" x2="460" y2="305" stroke="#484840" stroke-width="3" opacity="0.5"/>
+  <!-- ALU jacket seam bolts -->
+  <circle cx="120" cy="220" r="5" fill="#c0c4c8" stroke="#909498" stroke-width="1.5"/>
+  <circle cx="120" cy="280" r="5" fill="#c0c4c8" stroke="#909498" stroke-width="1.5"/>
+  <circle cx="680" cy="220" r="5" fill="#c0c4c8" stroke="#909498" stroke-width="1.5"/>
+  <circle cx="680" cy="280" r="5" fill="#c0c4c8" stroke="#909498" stroke-width="1.5"/>
+  <!-- ALU outer border -->
+  <rect x="50" y="165" width="700" height="170" rx="85" fill="none" stroke="#d0d4d8" stroke-width="1.5" opacity="0.6"/>
+  <!-- Expansion joint detail -->
+  <rect x="350" y="165" width="15" height="170" fill="#b0b4b8" opacity="0.4"/>
+  <rect x="350" y="165" width="15" height="170" fill="none" stroke="#909498" stroke-width="0.5" opacity="0.5"/>
+  <!-- Label -->
+  <rect x="260" y="390" width="280" height="60" rx="12" fill="#0a0a08" opacity="0.75"/>
+  <text x="400" y="413" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#d0a060" text-anchor="middle" letter-spacing="2">DAMPFLEITUNG</text>
+  <text x="400" y="432" font-family="Arial, sans-serif" font-size="11" fill="#907040" text-anchor="middle">Mineralwolle · Hochtemperatur &gt;130°C</text>
+  <!-- Temp badge -->
+  <rect x="30" y="55" width="145" height="55" rx="10" fill="#0a0a08" opacity="0.8"/>
+  <text x="102" y="76" font-family="Arial, sans-serif" font-size="11" fill="#d09040" text-anchor="middle" font-weight="bold">BETRIEBSTEMP.</text>
+  <text x="102" y="98" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#e0a040" text-anchor="middle">&gt;250°C</text>
+</svg>
