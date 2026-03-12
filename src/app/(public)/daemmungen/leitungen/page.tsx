@@ -42,7 +42,7 @@ const materialData = [
     properties: "Hohe Dampfsperrwirkung.",
   },
   {
-    area: "Heizleitungen / Warmwasser (unter 80 Grad C)",
+    area: "Heizleitungen / Warmwasser (unter 80 °C)",
     material: "PIR-Schalen oder Mineralwolleschalen",
     properties: "Guter Wärmeleitwert, dünnere Dämmstärke.",
   },
@@ -52,7 +52,7 @@ const materialData = [
     properties: "Mit Dampfsperranstrich.",
   },
   {
-    area: "Dampfleitungen (über 130 Grad C)",
+    area: "Dampfleitungen (über 130 °C)",
     material: "Mineralwolle (Glas- oder Steinwolle)",
     properties: "Hohe Hitzebeständigkeit.",
   },
@@ -63,30 +63,30 @@ const coverings = [
     title: "ALU-Blech",
     thickness: "0.6 mm bis 1.0 mm",
     description: "Gilt als bester sowie schönster Schutz. Wird meist in Zentralen eingesetzt.",
-    image: "/Fotos/Leitung/AluBlech.svg"
+    image: "/Fotos/Leitung/AluBlech.svg",
   },
   {
     title: "PVC-Folie",
     description: "Gehört zu den meistverwendeten Umhüllungen. Wichtig: PVC ist nicht UV-beständig.",
-    image: "/Fotos/Leitung/PVCFolie.svg"
+    image: "/Fotos/Leitung/PVCFolie.svg",
   },
   {
     title: "ALU-Grobkornfolie",
     thickness: "ca. 0.25 mm",
     description: "Wird meist als PVC-Ersatz eingesetzt. Wir empfehlen diese Umhüllung nur auf druckfeste Isolierungen.",
-    image: "/Fotos/Leitung/AluGrobkorn.svg"
+    image: "/Fotos/Leitung/AluGrobkorn.svg",
   },
   {
     title: "Alufolie",
     description: "Wird meist als Abfaserungsschutz von unsichtbar verlaufenden Isolierungen eingesetzt (z.B. Hohldecken).",
-    image: "/Fotos/Leitung/AluFolieThin.svg"
+    image: "/Fotos/Leitung/AluFolieThin.svg",
   },
 ];
 
 export default function LeitungenPage() {
   return (
     <div className="bg-surface-warm min-h-screen">
-      {/* Sektion 1: Hero-Bereich */}
+      {/* Sektion 1: Hero */}
       <ServiceHero
         title="Energie bewahren. Anlagen schützen."
         description="Ihr Spezialist für die Dämmung von Kälte-, Heiz-, und Sanitärleitungen. Wir stoppen Energieverluste und verhindern zuverlässig Schwitzwasser – mit massgeschneiderten Dämmsystemen und fachgerechter Montage."
@@ -96,36 +96,32 @@ export default function LeitungenPage() {
           { label: "Dämmungen", href: "/daemmungen" },
           { label: "Leitungsdämmungen", href: "/daemmungen/leitungen" },
         ]}
-        cta={{
-          label: "Jetzt Fachberatung anfordern",
-          href: "/kontakt",
-        }}
+        cta={{ label: "Jetzt Fachberatung anfordern", href: "/kontakt" }}
       />
 
-      {/* Sektion 2: Einleitung & Trust-Elemente */}
+      {/* Sektion 2: Einleitung & Trust */}
       <section className="section-padding bg-surface-white">
-        <div className="max-w-[1280px] mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-12 lg:mb-24">
             <ScrollReveal>
-              <h2 className="text-primary text-4xl md:text-5xl font-bold mb-8 leading-[1.1]">
-                Effizienz durch <br />
-                professionelle Isolierung.
+              <h2 className="text-primary text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-[1.1]">
+                Effizienz durch professionelle Isolierung.
               </h2>
-              <p className="text-text-secondary text-lg md:text-xl leading-relaxed max-w-xl">
+              <p className="text-text-secondary text-base sm:text-lg leading-relaxed max-w-xl">
                 Heiz- und Kälte-Energie ist ein sehr flüchtiges Gut. Bereits nach der Erzeugung verliert das Medium durch Abstrahlverluste kontinuierlich an Energie. Zum sorgsamen Umgang unserer Ressourcen hat der Gesetzgeber Mindest-Dämm-Vorschriften erlassen. Wir sorgen mit optimaler Isolierung dafür, dass möglichst viel der erzeugten Energie am Bestimmungsort ankommt.
               </p>
             </ScrollReveal>
 
             <ScrollReveal staggerChildren={0.1}>
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-4 sm:gap-6">
                 {trustItems.map((item, i) => (
                   <ScrollRevealItem key={i}>
-                    <div className="p-6 rounded-2xl bg-surface-warm border border-black/5 hover:border-accent/30 transition-all duration-300 group">
-                      <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform duration-500">
-                        <item.icon className="w-6 h-6 text-accent" />
+                    <div className="p-4 sm:p-6 rounded-2xl bg-surface-warm border border-black/5 hover:border-accent/30 transition-all duration-300 group">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white flex items-center justify-center mb-3 sm:mb-4 shadow-sm group-hover:scale-110 transition-transform duration-500 shrink-0">
+                        <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                       </div>
-                      <h4 className="font-bold text-primary mb-2">{item.title}</h4>
-                      <p className="text-sm text-text-secondary leading-relaxed">{item.description}</p>
+                      <h4 className="font-bold text-primary text-sm sm:text-base mb-1 sm:mb-2">{item.title}</h4>
+                      <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">{item.description}</p>
                     </div>
                   </ScrollRevealItem>
                 ))}
@@ -138,53 +134,53 @@ export default function LeitungenPage() {
       {/* Sektion 3: Anwendungsbereiche (Tabs) */}
       <section className="section-padding bg-primary text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/10 blur-[120px] rounded-full" />
-        <div className="max-w-[1280px] mx-auto px-6 relative z-10">
-          <ScrollReveal className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Anwendungsbereiche</h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 relative z-10">
+          <ScrollReveal className="text-center mb-10 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 tracking-tight">Anwendungsbereiche</h2>
+            <p className="text-white/60 text-base sm:text-lg max-w-2xl mx-auto">
               Für jede Anforderung die passende technologische Lösung. Entdecken Sie unsere Spezialgebiete.
             </p>
           </ScrollReveal>
 
           <ScrollReveal>
             <Tabs defaultValue="kaelte" className="w-full">
-              <div className="mb-12">
-                <TabsList className="bg-white/5 border border-white/10 p-1.5 rounded-2xl backdrop-blur-md grid grid-cols-3 sm:inline-flex w-full sm:w-auto">
-                  <TabsTrigger value="kaelte" className="px-2 sm:px-8 py-2.5 sm:py-3 rounded-xl data-[state=active]:bg-accent data-[state=active]:text-primary font-bold transition-all text-xs sm:text-base text-center leading-tight text-white/70">
+              <div className="mb-6 sm:mb-12">
+                <TabsList className="bg-white/5 border border-white/10 p-1 sm:p-1.5 rounded-xl sm:rounded-2xl backdrop-blur-md grid grid-cols-3 sm:inline-flex w-full sm:w-auto">
+                  <TabsTrigger value="kaelte" className="px-2 sm:px-8 py-2 sm:py-3 rounded-lg sm:rounded-xl data-[state=active]:bg-accent data-[state=active]:text-primary font-bold transition-all text-xs sm:text-base text-center leading-tight text-white/70">
                     <span className="sm:hidden">Kälte&shy;dämmung</span>
                     <span className="hidden sm:inline">Kältedämmungen</span>
                   </TabsTrigger>
-                  <TabsTrigger value="heizung" className="px-2 sm:px-8 py-2.5 sm:py-3 rounded-xl data-[state=active]:bg-accent data-[state=active]:text-primary font-bold transition-all text-xs sm:text-base text-center leading-tight text-white/70">
+                  <TabsTrigger value="heizung" className="px-2 sm:px-8 py-2 sm:py-3 rounded-lg sm:rounded-xl data-[state=active]:bg-accent data-[state=active]:text-primary font-bold transition-all text-xs sm:text-base text-center leading-tight text-white/70">
                     <span className="sm:hidden">Heizung &amp; Sanitär</span>
                     <span className="hidden sm:inline">Heizung & Sanitär</span>
                   </TabsTrigger>
-                  <TabsTrigger value="dampf" className="px-2 sm:px-8 py-2.5 sm:py-3 rounded-xl data-[state=active]:bg-accent data-[state=active]:text-primary font-bold transition-all text-xs sm:text-base text-center leading-tight text-white/70">
+                  <TabsTrigger value="dampf" className="px-2 sm:px-8 py-2 sm:py-3 rounded-lg sm:rounded-xl data-[state=active]:bg-accent data-[state=active]:text-primary font-bold transition-all text-xs sm:text-base text-center leading-tight text-white/70">
                     <span className="sm:hidden">Dampf&shy;leitungen</span>
                     <span className="hidden sm:inline">Dampfleitungen</span>
                   </TabsTrigger>
                 </TabsList>
               </div>
 
-              <div className="bg-white/5 border border-white/10 rounded-[2.5rem] p-8 md:p-12 backdrop-blur-sm shadow-2xl">
+              <div className="bg-white/5 border border-white/10 rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 md:p-12 backdrop-blur-sm shadow-2xl">
                 <TabsContent value="kaelte" className="focus-visible:outline-none">
-                  <div className="grid md:grid-cols-2 gap-12 items-center">
+                  <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
                     <div>
-                      <h3 className="text-3xl md:text-4xl font-bold mb-6 text-accent">Zuverlässiger Schutz vor Kondenswasser</h3>
-                      <p className="text-white/70 text-lg leading-relaxed mb-8">
+                      <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6 text-accent">Zuverlässiger Schutz vor Kondenswasser</h3>
+                      <p className="text-white/70 text-sm sm:text-lg leading-relaxed mb-6 sm:mb-8">
                         Kälteführende Anlagenteile sind oft akut schwitzwassergefährdet. Um eine stetige Anreicherung von Kondenswasser im Dämmstoff zu verhindern, benötigen Kältedämmsysteme eine effektive Dampfsperre.
                       </p>
-                      <ul className="space-y-4">
+                      <ul className="space-y-3 sm:space-y-4">
                         <li className="flex items-start gap-3">
-                          <CheckCircle2 className="w-6 h-6 text-accent shrink-0 mt-1" />
-                          <span><strong className="text-white">Synthetischer Kautschuk:</strong> Geschlossenzellig und in hohem Masse dampfsperrend.</span>
+                          <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-accent shrink-0 mt-0.5" />
+                          <span className="text-sm sm:text-base"><strong className="text-white">Synthetischer Kautschuk:</strong> Geschlossenzellig und in hohem Masse dampfsperrend.</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <CheckCircle2 className="w-6 h-6 text-accent shrink-0 mt-1" />
-                          <span><strong className="text-white">PIR-Schalen:</strong> Hervorragender Wärmeleitwert von 0.023 W/(mK). Auch als mehrlagiger Aufbau verfügbar.</span>
+                          <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-accent shrink-0 mt-0.5" />
+                          <span className="text-sm sm:text-base"><strong className="text-white">PIR-Schalen:</strong> Hervorragender Wärmeleitwert von 0.023 W/(mK). Auch als mehrlagiger Aufbau verfügbar.</span>
                         </li>
                       </ul>
                     </div>
-                    <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                    <div className="relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
                       <Image src="/Fotos/Leitung/Kaeltedaemmung.svg" alt="Kältedämmung synthetischer Kautschuk" fill className="object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
                     </div>
@@ -192,24 +188,24 @@ export default function LeitungenPage() {
                 </TabsContent>
 
                 <TabsContent value="heizung" className="focus-visible:outline-none">
-                  <div className="grid md:grid-cols-2 gap-12 items-center">
+                  <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
                     <div>
-                      <h3 className="text-3xl md:text-4xl font-bold mb-6 text-secondary">Effizienz für Wärme und Trinkwasser</h3>
-                      <p className="text-white/70 text-lg leading-relaxed mb-8">
+                      <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6 text-secondary">Effizienz für Wärme und Trinkwasser</h3>
+                      <p className="text-white/70 text-sm sm:text-lg leading-relaxed mb-6 sm:mb-8">
                         Wir führen täglich Isolierungen mit PIR-, Glaswoll- oder Steinwollschalen aus. Jedes System wird exakt auf die Betriebstemperaturen und Hygieneanforderungen abgestimmt.
                       </p>
-                      <ul className="space-y-4">
+                      <ul className="space-y-3 sm:space-y-4">
                         <li className="flex items-start gap-3">
-                          <CheckCircle2 className="w-6 h-6 text-secondary shrink-0 mt-1" />
-                          <span><strong className="text-white">Heizleitungen:</strong> Neuere Anlagen arbeiten mit Betriebstemperaturen bis ca. 80 Grad Celsius.</span>
+                          <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary shrink-0 mt-0.5" />
+                          <span className="text-sm sm:text-base"><strong className="text-white">Heizleitungen:</strong> Neuere Anlagen arbeiten mit Betriebstemperaturen bis ca. 80 Grad Celsius.</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <CheckCircle2 className="w-6 h-6 text-secondary shrink-0 mt-1" />
-                          <span><strong className="text-white">Sanitär-Kaltwasser:</strong> TemperaturGebäudeeintritt ca. 6 Grad Celsius. Hier steht die Schwitzwasserverhinderung im Vordergrund.</span>
+                          <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary shrink-0 mt-0.5" />
+                          <span className="text-sm sm:text-base"><strong className="text-white">Sanitär-Kaltwasser:</strong> Temperatur Gebäudeeintritt ca. 6 Grad Celsius. Hier steht die Schwitzwasserverhinderung im Vordergrund.</span>
                         </li>
                       </ul>
                     </div>
-                    <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                    <div className="relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
                       <Image src="/Fotos/Leitung/HeizungSanitaer.svg" alt="Heizungs- und Sanitärleitungen PIR-Dämmung" fill className="object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
                     </div>
@@ -217,18 +213,18 @@ export default function LeitungenPage() {
                 </TabsContent>
 
                 <TabsContent value="dampf" className="focus-visible:outline-none">
-                  <div className="grid md:grid-cols-2 gap-12 items-center">
+                  <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
                     <div>
-                      <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">Hochleistungsdämmung für extreme Temperaturen</h3>
-                      <p className="text-white/70 text-lg leading-relaxed mb-8">
+                      <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6 text-white">Hochleistungsdämmung für extreme Temperaturen</h3>
+                      <p className="text-white/70 text-sm sm:text-lg leading-relaxed mb-6 sm:mb-8">
                         Dampfleitungen werden mit Temperaturen ab ca. 130 Grad bis über 250 Grad betrieben. Je höher die Temperaturdifferenz, desto extremer ist der Wärmeverlust durch Abstrahlung. Dementsprechend dimensionieren wir die Isolierung exakt.
                       </p>
-                      <div className="p-6 rounded-2xl bg-white/5 border border-white/10 flex gap-4 items-center">
-                        <Flame className="w-10 h-10 text-accent" />
-                        <p className="text-sm font-medium italic">Spezial-dimensionierte Dämmstärken für maximale Prozesssicherheit und Energieeinsparung.</p>
+                      <div className="p-4 sm:p-6 rounded-2xl bg-white/5 border border-white/10 flex gap-3 sm:gap-4 items-start sm:items-center">
+                        <Flame className="w-8 h-8 sm:w-10 sm:h-10 text-accent shrink-0" />
+                        <p className="text-xs sm:text-sm font-medium italic">Spezial-dimensionierte Dämmstärken für maximale Prozesssicherheit und Energieeinsparung.</p>
                       </div>
                     </div>
-                    <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                    <div className="relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
                       <Image src="/Fotos/Leitung/Dampfleitung.svg" alt="Dampfleitung Hochtemperatur Mineralwolledämmung" fill className="object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
                     </div>
@@ -240,34 +236,51 @@ export default function LeitungenPage() {
         </div>
       </section>
 
-      {/* Sektion 4: Entscheidungshilfe zur Materialwahl (Tabelle) */}
+      {/* Sektion 4: Entscheidungshilfe (Tabelle) */}
       <section className="section-padding bg-surface-white">
-        <div className="max-w-[1280px] mx-auto px-6">
-          <ScrollReveal className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Entscheidungshilfe</h2>
-            <p className="text-text-secondary text-lg">Wählen Sie das passende Material für Ihren spezifischen Einsatzbereich.</p>
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+          <ScrollReveal className="mb-10 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6">Entscheidungshilfe</h2>
+            <p className="text-text-secondary text-base sm:text-lg">Wählen Sie das passende Material für Ihren spezifischen Einsatzbereich.</p>
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="overflow-x-auto rounded-3xl border border-black/5 shadow-xl">
+            {/* Mobile: stacked cards */}
+            <div className="block sm:hidden space-y-4">
+              {materialData.map((row, i) => (
+                <div key={i} className="bg-white rounded-2xl border border-black/5 shadow-sm p-5">
+                  <div className="text-xs font-black uppercase tracking-widest text-primary/40 mb-1">Anwendungsbereich</div>
+                  <div className="font-bold text-primary mb-3 text-sm">{row.area}</div>
+                  <div className="text-xs font-black uppercase tracking-widest text-primary/40 mb-1">Material</div>
+                  <span className="inline-block px-3 py-1 rounded-full bg-primary/5 text-primary font-bold text-xs border border-primary/10 mb-3">
+                    {row.material}
+                  </span>
+                  <div className="text-xs font-black uppercase tracking-widest text-primary/40 mb-1">Eigenschaften</div>
+                  <div className="text-sm text-text-secondary">{row.properties}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop: table */}
+            <div className="hidden sm:block overflow-x-auto rounded-3xl border border-black/5 shadow-xl">
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="bg-primary text-white">
-                    <th className="px-8 py-6 font-bold text-lg">Anwendungsbereich</th>
-                    <th className="px-8 py-6 font-bold text-lg">Empfohlenes Material</th>
-                    <th className="px-8 py-6 font-bold text-lg">Eigenschaften</th>
+                    <th className="px-5 sm:px-8 py-4 sm:py-6 font-bold text-base sm:text-lg">Anwendungsbereich</th>
+                    <th className="px-5 sm:px-8 py-4 sm:py-6 font-bold text-base sm:text-lg">Empfohlenes Material</th>
+                    <th className="px-5 sm:px-8 py-4 sm:py-6 font-bold text-base sm:text-lg">Eigenschaften</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-black/5">
                   {materialData.map((row, i) => (
                     <tr key={i} className="bg-white hover:bg-surface-warm transition-colors duration-300">
-                      <td className="px-8 py-6 font-semibold text-primary">{row.area}</td>
-                      <td className="px-8 py-6">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-primary/5 text-[#1A365D] font-bold text-sm border border-primary/10">
+                      <td className="px-5 sm:px-8 py-4 sm:py-6 font-semibold text-primary text-sm sm:text-base">{row.area}</td>
+                      <td className="px-5 sm:px-8 py-4 sm:py-6">
+                        <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-primary/5 text-[#1A365D] font-bold text-xs sm:text-sm border border-primary/10">
                           {row.material}
                         </span>
                       </td>
-                      <td className="px-8 py-6 text-text-secondary">{row.properties}</td>
+                      <td className="px-5 sm:px-8 py-4 sm:py-6 text-text-secondary text-sm sm:text-base">{row.properties}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -277,21 +290,21 @@ export default function LeitungenPage() {
         </div>
       </section>
 
-      {/* Sektion 5: Umhüllungen für Leitungsdämmungen (Bilder-Grid) */}
+      {/* Sektion 5: Umhüllungen */}
       <section className="section-padding bg-surface-warm">
-        <div className="max-w-[1280px] mx-auto px-6">
-          <ScrollReveal className="mb-16 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Umhüllungen & Schutz</h2>
-            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+          <ScrollReveal className="mb-10 sm:mb-16 text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6">Umhüllungen & Schutz</h2>
+            <p className="text-text-secondary text-base sm:text-lg max-w-2xl mx-auto">
               Die Umhüllung schützt die eigentliche Dämmung vor mechanischen Einflüssen und sorgt für ein ästhetisches Erscheinungsbild.
             </p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {coverings.map((item, i) => (
               <ScrollRevealItem key={i} delay={i * 0.1}>
-                <div className="group h-full flex flex-col bg-white rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-black/5">
-                  <div className="relative h-48 overflow-hidden bg-primary/5">
+                <div className="group h-full flex flex-col bg-white rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 sm:hover:-translate-y-2 border border-black/5">
+                  <div className="relative h-32 sm:h-48 overflow-hidden bg-primary/5">
                     {item.image && (
                       <Image
                         src={item.image}
@@ -300,19 +313,17 @@ export default function LeitungenPage() {
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <div className="p-8 flex-1 flex flex-col">
-                    <h3 className="text-xl font-bold text-[#1A1A2E] mb-3">{item.title}</h3>
+                  <div className="p-4 sm:p-8 flex-1 flex flex-col">
+                    <h3 className="text-base sm:text-xl font-bold text-[#1A1A2E] mb-2 sm:mb-3">{item.title}</h3>
                     {item.thickness && (
-                      <span className="inline-block text-xs font-black uppercase tracking-widest text-[#1A1A2E]/50 mb-4">
+                      <span className="inline-block text-[10px] sm:text-xs font-black uppercase tracking-widest text-[#1A1A2E]/50 mb-2 sm:mb-4">
                         Stärke: {item.thickness}
                       </span>
                     )}
-                    <p className="text-[#1A1A2E]/80 text-sm leading-relaxed mb-6 flex-1">
+                    <p className="text-[#1A1A2E]/80 text-xs sm:text-sm leading-relaxed flex-1">
                       {item.description}
                     </p>
-                    <div className="h-1 w-0 bg-[#1A1A2E]/20 group-hover:w-full transition-all duration-500" />
                   </div>
                 </div>
               </ScrollRevealItem>
@@ -321,20 +332,22 @@ export default function LeitungenPage() {
         </div>
       </section>
 
-      {/* Sektion 6: Brandschutz-Durchführungsisolierungen (Farbige Info-Box) */}
+      {/* Sektion 6: Brandschutz Info-Box */}
       <section className="section-padding py-0">
-        <div className="max-w-[1280px] mx-auto px-6">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
           <ScrollReveal>
-            <div className="bg-[#E85D04] rounded-[3rem] p-12 md:p-16 text-primary shadow-2xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-8 transform group-hover:rotate-12 transition-transform duration-700">
-                <Info className="w-24 h-24 text-primary/10" />
+            <div className="bg-[#E85D04] rounded-2xl sm:rounded-[3rem] p-6 sm:p-10 md:p-16 text-primary shadow-2xl relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-4 sm:p-8 transform group-hover:rotate-12 transition-transform duration-700">
+                <Info className="w-16 h-16 sm:w-24 sm:h-24 text-primary/10" />
               </div>
               <div className="relative z-10 max-w-3xl">
-                <div className="flex items-center gap-4 mb-6">
-                  <Flame className="w-10 h-10 text-primary" />
-                  <h2 className="text-3xl md:text-4xl font-black text-primary uppercase tracking-tight">Brandschutz bei Durchführungen</h2>
+                <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <Flame className="w-7 h-7 sm:w-10 sm:h-10 text-primary shrink-0 mt-0.5 sm:mt-0" />
+                  <h2 className="text-xl sm:text-3xl md:text-4xl font-black text-primary uppercase tracking-tight leading-tight">
+                    Brandschutz bei Durchführungen
+                  </h2>
                 </div>
-                <p className="text-primary text-lg md:text-xl font-bold leading-relaxed">
+                <p className="text-primary text-sm sm:text-lg md:text-xl font-bold leading-relaxed">
                   Sobald Installationen durch brandabschnittsbildende Decken oder Wände geführt werden, benötigen Rohre eine zugelassene Brandschutz-Durchführungsisolierung. Das Abschottungssystem sowie die verwendeten Durchführungsisolierungen müssen zusammen geprüft und zugelassen sein!
                 </p>
               </div>
@@ -343,7 +356,7 @@ export default function LeitungenPage() {
         </div>
       </section>
 
-      {/* Sektion 7: Footer-CTA */}
+      {/* Sektion 7: CTA */}
       <CTASection />
     </div>
   );
