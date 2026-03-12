@@ -29,6 +29,14 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  // Den aktuell eingeloggten User holen (wird als Author für importierte Posts verwendet)
+  const currentUser = await prisma.user.findUnique({
+    where: { email: session.user.email! },
+  });
+  if (!currentUser) {
+    return NextResponse.json({ error: "Kein Benutzer gefunden" }, { status: 400 });
+  }
+
   try {
     const data = await request.json();
 
@@ -38,48 +46,50 @@ export async function POST(request: NextRequest) {
 
     const stats = { categories: 0, posts: 0, projects: 0, skipped: 0 };
 
-    // 1. Kategorien importieren
+    // 1. Kategorien importieren — Mapping von alter ID zu neuer ID aufbauen
+    const categoryIdMap: Record<string, string> = {};
     for (const cat of data.categories) {
-      await prisma.category.upsert({
+      const upserted = await prisma.category.upsert({
         where: { slug: cat.slug },
         update: { name: cat.name },
         create: { id: cat.id, name: cat.name, slug: cat.slug },
       });
+      categoryIdMap[cat.id] = upserted.id;
       stats.categories++;
     }
 
     // 2. Artikel (Posts) importieren
     for (const post of data.posts) {
-      let coverImage = post.coverImage;
-
-      // Bild aus base64 wiederherstellen
-      if (post.coverImageBase64 && post.coverImageFilename) {
-        try {
-          coverImage = await saveBase64Image(post.coverImageBase64, post.coverImageFilename);
-        } catch {
-          coverImage = post.coverImage; // Fallback auf alten Pfad
-        }
-      }
-
       const existing = await prisma.post.findUnique({ where: { slug: post.slug } });
       if (existing) {
         stats.skipped++;
         continue;
       }
 
+      let coverImage = post.coverImage;
+      if (post.coverImageBase64 && post.coverImageFilename) {
+        try {
+          coverImage = await saveBase64Image(post.coverImageBase64, post.coverImageFilename);
+        } catch {
+          coverImage = post.coverImage;
+        }
+      }
+
+      // Kategorie-ID aus Mapping holen, Fallback auf Original
+      const resolvedCategoryId = categoryIdMap[post.categoryId] || post.categoryId;
+
       await prisma.post.create({
         data: {
-          id: post.id,
           title: post.title,
           slug: post.slug,
           excerpt: post.excerpt,
           content: post.content,
           coverImage,
-          categoryId: post.categoryId,
-          authorId: post.authorId,
+          categoryId: resolvedCategoryId,
+          authorId: currentUser.id, // immer den aktuellen User verwenden
           status: post.status,
-          metaTitle: post.metaTitle,
-          metaDesc: post.metaDesc,
+          metaTitle: post.metaTitle ?? null,
+          metaDesc: post.metaDesc ?? null,
           publishedAt: post.publishedAt ? new Date(post.publishedAt) : null,
           createdAt: new Date(post.createdAt),
           updatedAt: new Date(post.updatedAt),
@@ -90,8 +100,15 @@ export async function POST(request: NextRequest) {
 
     // 3. Referenzen (Projects) importieren
     for (const project of data.projects) {
-      let image = project.image;
+      const existing = await prisma.project.findFirst({
+        where: { title: project.title, categoryId: categoryIdMap[project.categoryId] || project.categoryId },
+      });
+      if (existing) {
+        stats.skipped++;
+        continue;
+      }
 
+      let image = project.image;
       if (project.imageBase64 && project.imageFilename) {
         try {
           image = await saveBase64Image(project.imageBase64, project.imageFilename);
@@ -100,19 +117,14 @@ export async function POST(request: NextRequest) {
         }
       }
 
-      const existing = await prisma.project.findUnique({ where: { id: project.id } });
-      if (existing) {
-        stats.skipped++;
-        continue;
-      }
+      const resolvedCategoryId = categoryIdMap[project.categoryId] || project.categoryId;
 
       await prisma.project.create({
         data: {
-          id: project.id,
           title: project.title,
           desc: project.desc,
           image,
-          categoryId: project.categoryId,
+          categoryId: resolvedCategoryId,
           createdAt: new Date(project.createdAt),
           updatedAt: new Date(project.updatedAt),
         },
@@ -125,8 +137,10 @@ export async function POST(request: NextRequest) {
       message: `Import erfolgreich: ${stats.categories} Kategorien, ${stats.posts} Artikel, ${stats.projects} Referenzen importiert. ${stats.skipped} bereits vorhanden (übersprungen).`,
       stats,
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Import error:", error);
-    return NextResponse.json({ error: "Import fehlgeschlagen" }, { status: 500 });
+    return NextResponse.json({
+      error: `Import fehlgeschlagen: ${error?.message || "Unbekannter Fehler"}`,
+    }, { status: 500 });
   }
 }
