@@ -38,7 +38,7 @@ export default function WhyJadaSection() {
           <span className="text-accent tracking-[0.2em] text-sm font-semibold uppercase mb-4 block">
             Ihre Vorteile
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight">
             Warum JADA?
           </h2>
         </ScrollReveal>
@@ -49,7 +49,7 @@ export default function WhyJadaSection() {
         >
           {reasons.map((reason, i) => (
             <ScrollRevealItem key={`reason-${i}`}>
-              <div className="group p-10 rounded-3xl bg-surface-white border border-gray-100/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(45,90,158,0.08)] transition-all duration-500 hover:-translate-y-2 h-full flex flex-col relative overflow-hidden">
+              <div className="group p-6 sm:p-8 md:p-10 rounded-3xl bg-surface-white border border-gray-100/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(45,90,158,0.08)] transition-all duration-500 hover:-translate-y-2 h-full flex flex-col relative overflow-hidden">
                 
                 {/* Decorative top line */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

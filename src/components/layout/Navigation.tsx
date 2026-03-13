@@ -231,7 +231,7 @@ export default function Navigation() {
                   <Link
                     href={link.href}
                     style={{ color: pathname.startsWith(link.href) ? '#E85E04' : TEXT_COLOR }}
-                    className="flex items-center justify-between py-4 text-2xl sm:text-3xl font-black transition-colors"
+                    className="flex items-center justify-between py-4 text-xl sm:text-2xl font-black transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
                     {link.label}

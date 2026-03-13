@@ -28,7 +28,7 @@ export default function TrustBar() {
         {partners.concat(partners).map((partner, i) => (
           <div
             key={i}
-            className="flex items-center justify-center mx-16 text-text-secondary font-semibold text-sm uppercase tracking-[0.2em] shrink-0"
+            className="flex items-center justify-center mx-6 sm:mx-10 md:mx-16 text-text-secondary font-semibold text-sm uppercase tracking-[0.2em] shrink-0"
           >
             <span className="w-1.5 h-1.5 bg-accent rounded-full mr-4 shadow-[0_0_8px_rgba(255,222,23,0.8)]" />
             {partner}

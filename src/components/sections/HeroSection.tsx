@@ -70,7 +70,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl lg:text-8xl xl:text-[7rem] font-bold text-surface-white leading-[1.05] mb-8 tracking-tight"
+            className="text-4xl sm:text-5xl lg:text-8xl xl:text-[7rem] font-bold text-surface-white leading-[1.05] mb-8 tracking-tight"
           >
             Wir <span className="text-secondary text-glow">schützen</span> <br />
             was wirklich zählt.

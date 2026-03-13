@@ -150,7 +150,7 @@ export default function DienstleistungenPage() {
               <span className="block text-[#B8960C] tracking-[0.25em] text-xs font-black uppercase mb-6 border border-[#B8960C]/30 inline-flex px-3 py-1 rounded-full bg-[#B8960C]/5">
                 Was wir bieten
               </span>
-              <h2 className="text-5xl md:text-6xl xl:text-7xl font-black text-primary leading-[0.9] tracking-tighter">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl xl:text-7xl font-black text-primary leading-[0.9] tracking-tighter">
                 Rundum-<br />
                 <span className="text-[#E05A00]">Service</span><br />
                 aus einer Hand.
@@ -194,7 +194,7 @@ export default function DienstleistungenPage() {
                   { value: "2'000+", label: "Lagerartikel", sub: "Immer verfügbar" },
                 ].map((s) => (
                   <div key={s.label} className="px-8 py-10 flex flex-col gap-1">
-                    <span className="text-4xl xl:text-5xl font-black text-white tracking-tight leading-none">
+                    <span className="text-2xl sm:text-3xl xl:text-5xl font-black text-white tracking-tight leading-none">
                       {s.value}
                     </span>
                     <span className="text-white/90 font-semibold text-sm mt-2">{s.label}</span>
@@ -218,7 +218,7 @@ export default function DienstleistungenPage() {
               <div className="flex-none w-14 h-[2px] bg-[#E05A00]" />
               <span className="text-[#E05A00] tracking-[0.25em] text-xs font-black uppercase">Unsere Leistungen</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-black text-primary tracking-tight leading-none">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-primary tracking-tight leading-none">
               Dienstleistungen
             </h2>
           </ScrollReveal>

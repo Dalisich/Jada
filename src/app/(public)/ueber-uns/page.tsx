@@ -57,7 +57,7 @@ export default function UeberUnsPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal>
               <span className="text-secondary tracking-[0.2em] text-sm font-semibold uppercase mb-6 block">Tradition trifft Moderne</span>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-primary mb-8 tracking-tight">Erfahrung aus über zwei Jahrzehnten.</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-primary mb-8 tracking-tight">Erfahrung aus über zwei Jahrzehnten.</h2>
               <p className="text-xl text-text-secondary leading-relaxed font-light mb-8">
                 JADA Isolierungen GmbH steht seit 1998 für Qualität und Zuverlässigkeit. Was als Zweimannbetrieb begann, hat sich zu einem der führenden Unternehmen in der Schweizer Isolierungsbranche entwickelt.
               </p>
@@ -86,13 +86,13 @@ export default function UeberUnsPage() {
         <div className="max-w-[1280px] mx-auto px-6">
           <ScrollReveal className="text-center mb-24">
             <span className="text-secondary tracking-[0.2em] text-sm font-semibold uppercase mb-4 block">Fundamente</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-primary tracking-tight">Unsere Kernwerte</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-primary tracking-tight">Unsere Kernwerte</h2>
           </ScrollReveal>
 
           <ScrollReveal staggerChildren={0.1} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((value, i) => (
               <ScrollRevealItem key={`value-${i}`}>
-                <div className="group h-full p-10 rounded-[2.5rem] bg-surface-white border border-gray-100 hover:shadow-[0_20px_50px_rgba(45,90,158,0.1)] transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center">
+                <div className="group h-full p-6 sm:p-8 md:p-10 rounded-[2.5rem] bg-surface-white border border-gray-100 hover:shadow-[0_20px_50px_rgba(45,90,158,0.1)] transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center">
                   <div className="w-16 h-16 rounded-2xl bg-primary/[0.03] group-hover:bg-primary text-primary group-hover:text-surface-white flex items-center justify-center mb-8 transition-all duration-500 ease-out">
                     <value.icon className="w-8 h-8" strokeWidth={1.5} />
                   </div>
@@ -115,7 +115,7 @@ export default function UeberUnsPage() {
         <div className="relative z-10 max-w-[1280px] mx-auto px-6">
           <ScrollReveal className="text-center mb-20">
             <span className="text-accent tracking-[0.2em] text-sm font-semibold uppercase mb-4 block">Unser Team</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Ihre Ansprechpartner</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white tracking-tight">Ihre Ansprechpartner</h2>
           </ScrollReveal>
 
           {/* CEO – Martin Jäger */}

@@ -26,7 +26,7 @@ export default function StatsSection() {
           <span className="text-secondary tracking-[0.2em] text-sm font-semibold uppercase mb-4 block">
             JADA in Zahlen
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-surface-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-surface-white tracking-tight">
             Fakten, die <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#FFB703]">überzeugen</span>
           </h2>
         </ScrollReveal>
@@ -45,7 +45,7 @@ export default function StatsSection() {
                 {/* Hover glow effect behind content inside card */}
                 <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                <div className="text-5xl md:text-6xl lg:text-[5rem] font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60 drop-shadow-sm">
+                <div className="text-3xl sm:text-4xl md:text-6xl lg:text-[5rem] font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60 drop-shadow-sm">
                   <CounterAnimation
                     target={stat.value}
                     suffix={stat.suffix}

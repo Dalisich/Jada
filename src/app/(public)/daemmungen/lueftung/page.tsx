@@ -56,7 +56,7 @@ export default function LueftungPage() {
       <section className="section-padding bg-surface-white">
         <div className="max-w-[1280px] mx-auto px-6">
           <ScrollReveal>
-            <div className="bg-primary/5 border border-primary/10 rounded-[2.5rem] p-10 md:p-12 flex flex-col md:flex-row gap-8 items-center">
+            <div className="bg-primary/5 border border-primary/10 rounded-[2.5rem] p-5 sm:p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center">
               <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-sm border border-black/5 shrink-0">
                 <Info className="w-8 h-8 text-primary" />
               </div>
@@ -109,7 +109,7 @@ export default function LueftungPage() {
                       <div className="h-px w-12 bg-secondary" />
                       <span className="text-secondary font-bold uppercase tracking-widest text-sm">Umhüllung {String(i + 1).padStart(2, '0')}</span>
                     </div>
-                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-8 leading-tight">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-8 leading-tight break-words hyphens-auto">
                       {row.title}
                     </h3>
                     <p className="text-text-secondary text-lg md:text-xl leading-relaxed whitespace-pre-line">

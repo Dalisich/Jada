@@ -95,9 +95,9 @@ export default function ServiceHero({
 
         <div className="max-w-5xl">
           <ScrollReveal delay={0.2}>
-            <h1 className="text-white text-6xl md:text-8xl font-bold mb-8 tracking-tighter leading-[0.95] drop-shadow-2xl">
+            <h1 className="text-white text-4xl sm:text-5xl md:text-8xl font-bold mb-8 tracking-tighter leading-[1.05] md:leading-[0.95] drop-shadow-2xl break-words hyphens-auto">
               {title.split(' ').map((word, i) => (
-                <span key={i} className="inline-block mr-[0.2em]">
+                <span key={i} className="inline-block mr-[0.2em] break-words">
                   {word}
                 </span>
               ))}

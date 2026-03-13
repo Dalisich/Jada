@@ -69,7 +69,7 @@ export default function KontaktPage() {
             <div className="lg:col-span-2 space-y-12">
               <ScrollReveal>
                 <span className="text-secondary tracking-[0.2em] text-sm font-semibold uppercase mb-6 block">Erreichbarkeit</span>
-                <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-10 tracking-tight">Immer für Sie da.</h2>
+                <h2 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-primary mb-10 tracking-tight">Immer für Sie da.</h2>
                 
                 <div className="grid gap-8">
                   {contactInfo.map((info) => (
@@ -121,7 +121,7 @@ export default function KontaktPage() {
                       <div className="w-24 h-24 rounded-full bg-secondary/10 flex items-center justify-center mb-10">
                         <CheckCircle className="w-12 h-12 text-secondary" />
                       </div>
-                      <h3 className="text-4xl font-extrabold text-primary mb-4 tracking-tight">Nachricht erhalten.</h3>
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-4 tracking-tight">Nachricht erhalten.</h3>
                       <p className="text-text-secondary text-lg font-light leading-relaxed max-w-sm">
                         Wir haben Ihre Anfrage erhalten und melden uns in Kürze bei Ihnen. Vielen Dank für Ihr Interesse!
                       </p>
@@ -134,7 +134,7 @@ export default function KontaktPage() {
                     </motion.div>
                   ) : (
                     <>
-                      <h3 className="text-3xl font-extrabold text-primary mb-10 tracking-tight">Anfrage senden.</h3>
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-primary mb-10 tracking-tight">Anfrage senden.</h3>
                       <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
                         <div className="grid md:grid-cols-2 gap-10">
                           <div className="space-y-2">

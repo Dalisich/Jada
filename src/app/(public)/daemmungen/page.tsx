@@ -80,7 +80,7 @@ export default function DaemmungenPage() {
                   </div>
 
                   <div className={`${i % 2 !== 0 ? 'lg:order-1' : ''}`}>
-                    <h3 className="text-4xl md:text-5xl font-bold text-primary mb-6 tracking-tight group-hover:text-secondary transition-colors duration-500">
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary mb-6 tracking-tight group-hover:text-secondary transition-colors duration-500">
                       {service.title}
                     </h3>
                     <p className="text-text-secondary text-lg mb-10 leading-relaxed font-light">

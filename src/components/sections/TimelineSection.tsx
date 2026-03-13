@@ -292,7 +292,7 @@ export default function TimelineSection() {
           <span className="text-accent text-sm font-bold uppercase tracking-[0.3em] mb-6 block">
             Unsere Evolution
           </span>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-primary tracking-tight mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-6xl font-extrabold text-primary tracking-tight mb-6">
             Vom Pionier zum{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
               Marktführer

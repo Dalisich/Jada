@@ -17,7 +17,7 @@ export default function CTASection() {
  
           <div className="relative z-20 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
             <ScrollReveal className="flex-1 lg:max-w-2xl">
-              <h2 className="text-surface-white text-4xl md:text-5xl lg:text-7xl font-extrabold mb-6 tracking-tight leading-[1.05]">
+              <h2 className="text-surface-white text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-extrabold mb-6 tracking-tight leading-[1.05]">
                 Wir <span className="text-secondary italic text-glow">rennen</span> <br />
                 für Sie.
               </h2>
