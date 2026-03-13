@@ -45,3 +45,11 @@ prisma/*.db
 prisma/*.db-journal
 prisma/*.db-shm
 prisma/*.db-wal
+
+# Test & temp files
+test-*.js
+*.error.txt
+seed-error.txt
+
+# Claude Code config
+.claude/

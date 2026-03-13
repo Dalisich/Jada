@@ -40,7 +40,6 @@ export default function KontaktPage() {
   const onSubmit = async (data: ContactFormData) => {
     // Simulate submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("Form data:", data);
     setSubmitted(true);
   };
 
